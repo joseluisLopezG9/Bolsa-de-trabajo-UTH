@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name=".editorconfig" server="ftp.espacioti.com.mx" local="132986974223562950" remote="132986977800000000" Dst="2" />
+<file name=".env" server="ftp.espacioti.com.mx" local="132993098687961643" remote="132996870600000000" Dst="2" />
+<file name=".env.example" server="ftp.espacioti.com.mx" local="132986974223572943" remote="132986977800000000" Dst="2" />
+<file name=".gitattributes" server="ftp.espacioti.com.mx" local="132986974224222941" remote="132986977800000000" Dst="2" />
+<file name=".gitignore" server="ftp.espacioti.com.mx" local="132986974224232948" remote="132986977800000000" Dst="2" />
+<file name=".styleci.yml" server="ftp.espacioti.com.mx" local="132986974224242946" remote="132986977800000000" Dst="2" />
+<file name="artisan" server="ftp.espacioti.com.mx" local="132986974227132979" remote="132986977800000000" Dst="2" />
+<file name="composer.json" server="ftp.espacioti.com.mx" local="132993059675578792" remote="132996871200000000" Dst="2" />
+<file name="composer.lock" server="ftp.espacioti.com.mx" local="132993059160888780" remote="132996871200000000" Dst="2" />
+<file name="package.json" server="ftp.espacioti.com.mx" local="132993077677835184" remote="132996901800000000" Dst="2" />
+<file name="phpunit.xml" server="ftp.espacioti.com.mx" local="132986974227632946" remote="132986977800000000" Dst="2" />
+<file name="README.md" server="ftp.espacioti.com.mx" local="132986974224252944" remote="132986977800000000" Dst="2" />
+<file name="server.php" server="ftp.espacioti.com.mx" local="132986974227902969" remote="132986977800000000" Dst="2" />
+<file name="webpack.mix.js" server="ftp.espacioti.com.mx" local="132993062849140149" remote="132996919200000000" Dst="2" />
+<file name="package-lock.json" server="ftp.espacioti.com.mx" local="132994726776909148" remote="132996901800000000" Dst="2" />
+</dwsync>
