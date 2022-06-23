@@ -176,10 +176,7 @@
     <img style="width:15%" alt="ERROR 404" src="vendor/adminlte/dist/img/logoSecretariaPuebla.png"/>
     <img style="width:15%" alt="ERROR 404" src="vendor/adminlte/dist/img/logoUTyP.png"/>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    
 
 <footer class="container-fluid bg-success text-white">
 	<div class="container">
