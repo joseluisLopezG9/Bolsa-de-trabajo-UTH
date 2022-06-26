@@ -105,6 +105,8 @@ body{
   color: #0069d9;
   text-decoration: none;
 }
+
+
 </style>
 
 
@@ -158,7 +160,7 @@ body{
               @enderror
             </div>
 
-
+            <br>
             <div class="mb-3">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="cb1" name="">
@@ -166,19 +168,23 @@ body{
               </div>
             </div>
 
+            <br>
+
             <div class="mb-3">
-              <button type="submit" class="btn btn-block text-uppercase">
+              <button type="submit" class="btn btn-block text-uppercase btn btn-success">
               {{ __('Iniciar sesión') }}
               </button>
             </div>
 
-            <div class="mb-3">
-            @if (Route::has('home'))
-              <button type="submit" href="{{ route('home') }}" class="btn btn-block text-uppercase">
+            <div class="text-right">
+            @if (Route::has('welcome'))
+            <a type="submit" class="btn btn-block text-uppercase btn btn-success" href="{{ route('welcome') }}">
               {{ __('Cancelar') }}
-              </button>
-              @endif
+            </a>  
+            @endif
             </div>
+
+            <br>
 
             <div class="text-right">
             @if (Route::has('password.request'))
@@ -187,7 +193,9 @@ body{
               </a>
               @endif
             </div>
-            
+          
+
+
             <hr class="my-4">
             <div class="text-center mb-2">
             <p>Consulta <a href="#">aquí</a> el proceso para formar parte de la bolsa de trabajo.</p>
