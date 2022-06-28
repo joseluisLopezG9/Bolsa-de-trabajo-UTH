@@ -183,7 +183,7 @@
         }
 
         .boton.cinco:hover {
-            background: #2f9b05;
+            background: #90f1b8;
         }
 
         .boton.cinco:hover .icono {
@@ -201,9 +201,9 @@
             justify-content: center;
             width: 100%;
             height: 35px;
-            background: skyblue;
+            background: white;
             color: #ffff;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Verdana', 'Sans-serif';
             font-size: 13px;
             font-weight: 300;
             border: none;
@@ -243,18 +243,18 @@
                 <h2 class="personal" style="color: green">Universidad Tecnólogica de Huejotzingo</h2>
             </center>
             <div class="card-body">
-                <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quibusdam, ratione eius laborum corrupti omnis ea explicabo eum ex officia modi harum tempore reprehenderit dolorem asperiores architecto suscipit nulla quisquam!
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati quasi enim aperiam libero saepe distinctio rem ipsum omnis, similique atque aut nemo dolore iure veniam necessitatibus deserunt odio hic sapiente.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos voluptatem vitae earum possimus labore molestiae maiores odio quae harum reprehenderit saepe sapiente reiciendis, nostrum ab nihil veritatis! Facere, provident sint.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae mollitia laboriosam itaque, autem eum accusantium impedit harum ducimus blanditiis ratione enim suscipit, sequi, hic error quo repellat voluptas minima commodi?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laudantium quo sunt exercitationem dolores earum quis accusamus nihil veniam? Nemo ad consequatur quibusdam deserunt eaque odit consequuntur, ratione saepe dolore.
-                    Ipsam beatae perspiciatis nam praesentium. Animi expedita magni, numquam nam quisquam corrupti inventore amet, officia facilis doloremque praesentium nisi libero? Sint nobis perferendis autem sequi voluptates. Quidem sapiente consequuntur nihil.
-                    Fugit suscipit officia aliquid laborum deleniti, libero minus possimus! Impedit ducimus tempora mollitia est quibusdam expedita, iure et? Nam voluptatibus quas, sequi praesentium velit sed laboriosam natus ad dicta modi.
-                    Fugiat blanditiis omnis sit corporis laborum eveniet iusto qui distinctio dolorum mollitia, exercitationem optio, officiis perspiciatis laboriosam veritatis quam fugit praesentium non. Eligendi explicabo eaque labore harum tempora! Fugit, laborum.
-                    Quae harum quidem fugit exercitationem totam culpa, earum in illum corporis dignissimos laudantium facere, expedita error numquam quisquam voluptates necessitatibus voluptate atque voluptas quasi. Quibusdam ea fugiat atque nemo adipisci.
-                    Distinctio possimus unde quo error illo. Quas pariatur distinctio, dolorem odit hic dolores, ducimus modi voluptatem soluta dolor corporis nobis, voluptates quo?
-                    Quae laudantium provident id laboriosam! Quibusdam deleniti distinctio officiis voluptatem id, excepturi cumque sunt est qui ipsa dolores aspernatur ab neque omnis iste ipsam nobis ratione? Cupiditate tempore quae accusamus?
-                    Blanditiis aperiam quas delectus praesentium totam tempore ducimus error omnis aliquam ea, harum, reprehenderit sed unde? Id quisquam, voluptate voluptatum sint quia ea tempore vel nemo, placeat quos itaque possimus?</p>
+                <p align="justify">Fundada en 1998 por el Gobierno del Estado de Puebla como un Organismo Público Descentralizado, la Universidad Tecnológica de Huejotzingo (UTH) surge con la misión de satisfacer la demanda de ingenieros y técnicos superiores universitarios que existe tanto en el estado como en el país. 
+
+La filosofía de la UTH es formar profesionistas y técnicos que destaquen tanto a nivel académico como ético, partiendo del propio talento y las habilidades con las que cuente cada uno de sus alumnos, las cuales buscará impulsar mediante el entrenamiento, la práctica, la constancia y la disciplina.  
+
+Todo esto sin descuidar la formación del alumno como persona íntegra que tenga entre sus principales prioridades el cuidado del medio ambiente y aportar al desarrollo de una mejor calidad de vida para todas las personas.
+
+
+
+En el año 2022, La Universidad Tecnológica de Huejotzingo imparte 8 carreras universitarias y 14 carreras cortas. Entre sus carreras universitarias, puedes estudiar alguna de sus 2 licenciaturas y 6 ingenierías.
+La Universidad Tecnológica de Huejotzingo actualmente no imparte carreras en línea, licenciaturas en línea, ingenierías en línea ni posgrados en línea.
+
+</p>
             </div>
         </div>
     </div> <br>
