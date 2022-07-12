@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+Route::resource('egresados', App\Http\Controllers\EgresadoController::class);
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
