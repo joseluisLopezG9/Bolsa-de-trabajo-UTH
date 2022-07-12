@@ -226,62 +226,7 @@ return [
 
     'menu' => [
         // Navbar items:
-        
-        [   
-            'text' => 'Nosotros',
-            'url' => '#',
-            'topnav_right' => 'true',
-            'submenu' => [
-                [   
-                    'text' => '-- ¿Quiénes somos?',
-                    'url' => '#'
-                ],
-                [   
-                    'text' => '-- Alta de vacante',
-                    'url' => '#'
-                ],
-                [
-                    'text' => '-- Reclutamiento en UTH',
-                    'url' => '#'
-                ],
-                [
-                    'text' => '-- Contacto',
-                    'url' => '#'
-                ]
-            ]
-        ],
-        [   'text' => 'Egresados',
-            'url' => '#',
-            'topnav_right' => 'true',
-            'submenu' => [
-                [
-                    'text' => '-- ¿Cómo me registro?',
-                    'url' => '#'
-                ],
-                [
-                    'text' => '-- Vigencias',
-                    'url' => '#'
-                ],
-                [
-                    'text' => '-- Aviso de privacidad',
-                    'url' => '#'
-                ]
-            ]
-        ],
-        [   'text' => 'Empresas',
-            'url' => '#',
-            'topnav_right' => 'true',
-            'submenu' => [
-                [
-                    'text' => '-- Registrar vacante',
-                    'url' => '#'
-                ],
-                [   
-                    'text' => '-- Seguimiento de empresas',
-                    'url' => '#'
-                ]
-            ]
-        ],
+
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
@@ -388,7 +333,7 @@ return [
                 ]
             ]
         ],
-        ['header' => 'AJUSTES DE CUENTA'],
+        [      'header' => 'AJUSTES DE CUENTA'],
         [
             'text' => 'PERFIL',
             'url'  => 'admin/settings',

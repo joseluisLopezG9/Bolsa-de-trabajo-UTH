@@ -3,11 +3,7 @@
 @section('title', 'index')
 
 @section('content_header')
-    <center><h3 style="color: blue;font-size: 35px;"> Bolsa de trabajo institucional</h3></center>
-@stop
-
-@section('content_header')
-    <h1 style="color: green;font-size: 35px;"> Bienvenido (a)</h1>
+    <center><h3 style="color: green;font-size: 35px;"> Bolsa de trabajo institucional</h3></center>
 @stop
 
 @section('content')
@@ -19,11 +15,16 @@
 
 
         <center><img class="img-fluid" src="vendor/adminlte/dist/img/logoUTH.png" alt=""></center>
-        <h2 class="card-title" style="color: green"> Bienvenido (a) </h2>
+        <br>
+        <br>
+        <h3 class="card-title" style="color: green"> Bienvenido (a) </h3>
         </div>
 
         <div class="card-body">
-        Este es un sistema desarrollado por la Universidad Tecnólogica de Huejotzingo, dicho sistema va dirigido para empresas, estudiantes y egresados.
+        <p align="justify">
+        El entorno laboral al cual se incorporan los alumnos y egresados está inmerso en el uso intensivo de tecnologías para eficientar los procesos de reclutamiento en nuestra localidad. En virtud de ello, se considera de suma importancia que la operación de la bolsa de trabajo sea amigable y de fácil acceso para la promoción del talento de la Institución, por lo tanto se cuenta con la vinculación directa entre algunas empresas.</p>
+
+        <h4 align="center" style="color: green">¡ Te invitamos a hacer uso del sistema !</h4> 
 
         </div>
 
@@ -33,25 +34,3 @@
 @stop
 
 
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('Has iniciado sesión!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
