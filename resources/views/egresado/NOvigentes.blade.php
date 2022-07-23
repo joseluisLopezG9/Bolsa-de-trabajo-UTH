@@ -9,9 +9,8 @@
 @endsection
 
 @section('content_header')
-    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+    <center><h3 style="color: green;font-size: 35px;"> Bolsa de trabajo institucional</h3></center>
 @stop
-
 
 @section('content')
     <div class="container-fluid">
@@ -22,7 +21,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <h4 id="card_title">
-                                {{ __('Consultar Egresado') }}
+                                {{ __('Egresados No Vigentes en Bolsa de Trabajo Institucional') }}
 							</h4>
                         </div>
                     </div>
@@ -32,74 +31,10 @@
                         </div>
                     @endif
 					<br>
-
-					<h6>Buscar Egresado por Folio</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-					
-					<br>
-
-					<h6>Buscar Egresado por Apellido Paterno</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
-					<br>
-
-					<h6>Buscar Egresado por Matricula</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
-					<br>
-
-					<h6>Buscar egresado por carrera</h6>
-					<div class="input-group">
-					<select class="selectpicker" title="Pick One">
-					<option data-hidden="true">
-					Elija una opción												
-					</option>
-					<option>TSU Tecnologías de la Información</option>
-					<option>TSU Desarrollo de Negocios</option>
-					<option>Ing Metalmecánica</option>
-					<option>Ing Procesos industriales</option>
-					</select>
-					</div>
-
-					<br>
-
-				
-					<h6>Buscar Egresado por Nombre</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
-					<br>
-
-					<h6>Buscar Egresado por Apellido Materno</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
-					<br>
-
-					<h6>Buscar Egresado por Fecha</h6>
-					<div class="input-group">
-					<input type="date" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
-					<p align="center">RESULTADOS</p>
 				<div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover" id="usuarios">
+                            <table class="table table-striped table-hover" id="usuarios_novigentes">
                                 <thead class="thead">
                                     <tr>
                                         <th>Folio</th>
@@ -108,6 +43,7 @@
 										<th>Apellido Materno</th>
 										<th>Matricula</th>
 										<th>Carrera</th>
+                                        <th>Venció</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -121,13 +57,10 @@
 											<td>{{ $egresado->lastname2 }}</td>
 											<td>{{ $egresado->enrollment }}</td>
 											<td>{{ $egresado->career }}</td>
+                                            <td>{{ $egresado->validity }}</td>
                                             <td>
                                                 <form action="{{ route('egresados.destroy',$egresado->id) }}" method="POST">
-                                                    <a class="btn btn btn-primary " href="{{ route('egresados.show',$egresado->id) }}"><i class="fa fa-fw fa-eye"></i>Mostrar</a>
-                                                    <a class="btn btn btn-success" href="{{ route('egresados.edit',$egresado->id) }}"><i class="fa fa-fw fa-edit"></i>Editar</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
+                                                    <a class="btn btn btn-success" href="{{ route('#',$egresado->id) }}">Notificar</a>
                                                 </form>
                                             </td>
                                         </tr>
@@ -150,7 +83,7 @@
 	<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 	<script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap4.min.js"></script>
 	<script>
-		$('#usuarios').DataTable({
+		$('#usuarios_novigentes').DataTable({
 			responsive: true,
 			autoWidth: false,
 		

@@ -47,7 +47,7 @@ return [
 
     'logo' => '<b>| Panel de control</b>',
     'logo_img' => 'vendor/adminlte/dist/img/logoUTH.png',
-    'logo_img_class' =>'brand-image img-rounded elevation-3',
+    'logo_img_class' =>'brand-image-xs',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'UTH',
@@ -65,10 +65,10 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
+    'usermenu_header' => true,
+    'usermenu_header_class' => 'bg-success',
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
     'usermenu_profile_url' => true,
 
     /*
@@ -122,12 +122,12 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
-    'classes_brand_text' => '',
+    'classes_brand' => 'bg-white',
+    'classes_brand_text' => 'text-dark',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-success elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -167,8 +167,8 @@ return [
     |
     */
 
-    'right_sidebar' => false,
-    'right_sidebar_icon' => 'fas fa-cogs',
+    'right_sidebar' => true,
+    'right_sidebar_icon' => 'fas fa-home',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
@@ -243,26 +243,25 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-
             'text' => '| Egresados',
             'url' => '#',
             'icon' => 'fa fa-user',
             'submenu' => [
                 [
                     'text' => '-- Nuevo egresado',
-                    'url' => '#'
+                    'url' => 'egresados/create'
                 ],
                 [   
                     'text' => '-- Consultar egresado',
-                    'url' => '#'
+                    'url' => 'egresados'
                 ],
                 [   
                     'text' => '-- Vigentes',
-                    'url' => '#'
+                    'url' => 'egresados/vigentes'
                 ],
                 [    
                     'text' => '-- NO vigentes',
-                    'url' => '#'
+                    'url' => 'egresados/NOvigentes'
                 ],
                 [   
                     'text' => '-- Usuario y contraseña',

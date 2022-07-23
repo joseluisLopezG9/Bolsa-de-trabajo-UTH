@@ -23,9 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+
 Route::resource('egresados', 'EgresadoController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
+
+Route::get('/egresado', 'EgresadoController@index')->name('egresado');
 

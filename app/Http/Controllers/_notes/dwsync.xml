@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Controller.php" server="ftp.espacioti.com.mx" local="132986974224632967" remote="133019064600000000" Dst="2" />
-<file name="HomeController.php" server="ftp.espacioti.com.mx" local="132992242982243056" remote="133019064600000000" Dst="2" />
-<file name="WelcomeController.php" server="ftp.espacioti.com.mx" local="133006008952845295" remote="133019064600000000" Dst="2" />
+<file name="Controller.php" server="ftp.espacioti.com.mx" local="132986974224632967" remote="133022427000000000" Dst="2" />
+<file name="HomeController.php" server="ftp.espacioti.com.mx" local="132992242982243056" remote="133022427000000000" Dst="2" />
+<file name="WelcomeController.php" server="ftp.espacioti.com.mx" local="133006008952845295" remote="133022427000000000" Dst="2" />
+<file name="EgresadoController.php" server="ftp.espacioti.com.mx" local="133021464157709386" remote="133022427000000000" Dst="2" />
 </dwsync>
