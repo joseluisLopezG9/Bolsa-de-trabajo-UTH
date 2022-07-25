@@ -4,17 +4,17 @@
     {{ $egresado->name ?? 'Show Egresado' }}
 @endsection
 
-@section('content')
+
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Egresado</span>
+                            <h3>Mostrar egresado </h3>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('egresados.index') }}"> Back</a>
+                            <a class="btn btn-success" href="{{ route('egresados.index') }}">Regresar</a>
                         </div>
                     </div>
 
@@ -158,4 +158,3 @@
             </div>
         </div>
     </section>
-@endsection
