@@ -21,59 +21,59 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Name:</strong>
-                            {{ $egresado->name }}
+                            <strong>Nombre:</strong>
+                            {{ $egresado->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Lastname:</strong>
-                            {{ $egresado->lastname }}
+                            <strong>Apellido Paterno:</strong>
+                            {{ $egresado->apellidoPaterno }}
                         </div>
                         <div class="form-group">
-                            <strong>Lastname2:</strong>
-                            {{ $egresado->lastname2 }}
+                            <strong>Apellido Materno:</strong>
+                            {{ $egresado->apellidoMaterno }}
                         </div>
                         <div class="form-group">
-                            <strong>Level:</strong>
-                            {{ $egresado->level }}
+                            <strong>Nivel de Estudios:</strong>
+                            {{ $egresado->nivelEstudios }}
                         </div>
                         <div class="form-group">
-                            <strong>Career:</strong>
-                            {{ $egresado->career }}
+                            <strong>Carrera:</strong>
+                            {{ $egresado->carrera }}
                         </div>
                         <div class="form-group">
-                            <strong>Enrollment:</strong>
-                            {{ $egresado->enrollment }}
+                            <strong>Matricula:</strong>
+                            {{ $egresado->matricula }}
                         </div>
                         <div class="form-group">
                             <strong>Division:</strong>
                             {{ $egresado->division }}
                         </div>
                         <div class="form-group">
-                            <strong>Gen:</strong>
+                            <strong>Generación:</strong>
                             {{ $egresado->gen }}
                         </div>
                         <div class="form-group">
-                            <strong>Address:</strong>
-                            {{ $egresado->address }}
+                            <strong>Domicilio:</strong>
+                            {{ $egresado->domicilio }}
                         </div>
                         <div class="form-group">
-                            <strong>Suburb:</strong>
-                            {{ $egresado->suburb }}
+                            <strong>Colonia:</strong>
+                            {{ $egresado->colonia }}
                         </div>
                         <div class="form-group">
-                            <strong>State:</strong>
-                            {{ $egresado->state }}
+                            <strong>Estado:</strong>
+                            {{ $egresado->estado }}
                         </div>
                         <div class="form-group">
-                            <strong>Mun:</strong>
+                            <strong>Municipio:</strong>
                             {{ $egresado->mun }}
                         </div>
                         <div class="form-group">
-                            <strong>Tel:</strong>
+                            <strong>Teléfono:</strong>
                             {{ $egresado->tel }}
                         </div>
                         <div class="form-group">
-                            <strong>Cel:</strong>
+                            <strong>Celular:</strong>
                             {{ $egresado->cel }}
                         </div>
                         <div class="form-group">
@@ -81,76 +81,76 @@
                             {{ $egresado->email }}
                         </div>
                         <div class="form-group">
-                            <strong>User:</strong>
-                            {{ $egresado->user }}
+                            <strong>Usuario:</strong>
+                            {{ $egresado->usuario }}
                         </div>
                         <div class="form-group">
-                            <strong>Pass:</strong>
-                            {{ $egresado->pass }}
+                            <strong>Contraseña:</strong>
+                            {{ $egresado->contraseña }}
                         </div>
                         <div class="form-group">
-                            <strong>Reg Date:</strong>
-                            {{ $egresado->reg_date }}
+                            <strong>Fecha Alta:</strong>
+                            {{ $egresado->fecha_alta }}
                         </div>
                         <div class="form-group">
-                            <strong>Validity:</strong>
-                            {{ $egresado->validity }}
+                            <strong>Vigencia:</strong>
+                            {{ $egresado->vigencia }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills:</strong>
-                            {{ $egresado->skills }}
+                            <strong>Competencia °1</strong>
+                            {{ $egresado->n1 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills1:</strong>
-                            {{ $egresado->skills1 }}
+                            <strong>Competencia °2:</strong>
+                            {{ $egresado->n3 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills2:</strong>
-                            {{ $egresado->skills2 }}
+                            <strong>Competencia °3:</strong>
+                            {{ $egresado->n3 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills3:</strong>
-                            {{ $egresado->skills3 }}
+                            <strong>Competencia °4:</strong>
+                            {{ $egresado->n4 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills4:</strong>
-                            {{ $egresado->skills4 }}
+                            <strong>Competencia °5:</strong>
+                            {{ $egresado->n5 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills5:</strong>
-                            {{ $egresado->skills5 }}
+                            <strong>Competencia °6:</strong>
+                            {{ $egresado->n6 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills6:</strong>
-                            {{ $egresado->skills6 }}
+                            <strong>Competencia °7:</strong>
+                            {{ $egresado->n7 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills7:</strong>
-                            {{ $egresado->skills7 }}
+                            <strong>Competencia °8:</strong>
+                            {{ $egresado->n8 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills8:</strong>
-                            {{ $egresado->skills8 }}
+                            <strong>Competencia °9:</strong>
+                            {{ $egresado->n9 }}
                         </div>
                         <div class="form-group">
-                            <strong>Skills9:</strong>
-                            {{ $egresado->skills9 }}
+                            <strong>Competencia °10:</strong>
+                            {{ $egresado->n10 }}
                         </div>
                         <div class="form-group">
-                            <strong>Area:</strong>
+                            <strong>Área:</strong>
                             {{ $egresado->area }}
                         </div>
                         <div class="form-group">
-                            <strong>Cv:</strong>
+                            <strong>CV:</strong>
                             {{ $egresado->cv }}
                         </div>
                         <div class="form-group">
-                            <strong>Invoice:</strong>
-                            {{ $egresado->invoice }}
+                            <strong>Folio:</strong>
+                            {{ $egresado->folio }}
                         </div>
                         <div class="form-group">
-                            <strong>Remark:</strong>
-                            {{ $egresado->remark }}
+                            <strong>Observaciones:</strong>
+                            {{ $egresado->observaciones }}
                         </div>
 
                     </div>

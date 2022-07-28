@@ -116,11 +116,11 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $egresado->name }}</td>
-											<td>{{ $egresado->lastname }}</td>
-											<td>{{ $egresado->lastname2 }}</td>
-											<td>{{ $egresado->enrollment }}</td>
-											<td>{{ $egresado->career }}</td>
+											<td>{{ $egresado->nombre }}</td>
+											<td>{{ $egresado->apellidoPaterno }}</td>
+											<td>{{ $egresado->apellidoMaterno }}</td>
+											<td>{{ $egresado->matricula }}</td>
+											<td>{{ $egresado->carrera }}</td>
                                             <td>
                                                 <form action="{{ route('egresados.destroy',$egresado->id) }}" method="POST">
                                                     <a class="btn btn btn-primary " href="{{ route('egresados.show',$egresado->id) }}"><i class="fa fa-fw fa-eye"></i>Mostrar</a>
