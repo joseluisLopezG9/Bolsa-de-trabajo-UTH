@@ -241,13 +241,13 @@
             <center>
                 <h2 class="personal" style="color: green">Universidad Tecnólogica de Huejotzingo</h2>
             </center>
-            <div class="card-body">
-                <p align="justify">Fundada en 1998 por el Gobierno del Estado de Puebla como un Organismo Público Descentralizado, la Universidad Tecnológica de Huejotzingo (UTH) surge con la misión de satisfacer la demanda de ingenieros y técnicos superiores universitarios que existe tanto en el estado como en el país. 
+            <div class="card-body" style="font-weight: bold;">
+                <i><p align="justify">Fundada en 1998 por el Gobierno del Estado de Puebla como un Organismo Público Descentralizado, la Universidad Tecnológica de Huejotzingo (UTH) surge con la misión de satisfacer la demanda de ingenieros y técnicos superiores universitarios que existe tanto en el estado como en el país.<br> 
                 La filosofía de la UTH es formar profesionistas y técnicos que destaquen tanto a nivel académico como ético, partiendo del propio talento y las habilidades con las que cuente cada uno de sus alumnos, las cuales buscará impulsar mediante el entrenamiento, la práctica, la constancia y la disciplina.  
-                Todo esto sin descuidar la formación del alumno como persona íntegra que tenga entre sus principales prioridades el cuidado del medio ambiente y aportar al desarrollo de una mejor calidad de vida para todas las personas.
+                Todo esto sin descuidar la formación del alumno como persona íntegra que tenga entre sus principales prioridades el cuidado del medio ambiente y aportar al desarrollo de una mejor calidad de vida para todas las personas.<br>
                 En el año 2022, La Universidad Tecnológica de Huejotzingo imparte 8 carreras universitarias y 14 carreras cortas. Entre sus carreras universitarias, puedes estudiar alguna de sus 2 licenciaturas y 6 ingenierías.
                 La Universidad Tecnológica de Huejotzingo actualmente no imparte carreras en línea, licenciaturas en línea, ingenierías en línea ni posgrados en línea. 
-                </p>
+                </p></i>
             </div>
         </div>
     </div> <br>
@@ -257,10 +257,12 @@
     <img style="width:15%" alt="ERROR 404" src="vendor/adminlte/dist/img/logoUTyP.png" />
 
     
-
-    <footer class="container-fluid bg-success text-white">
+    <br>
+    <br>
+    <br>
+    <footer class="container-fluid bg-success text-white" style="font-weight: bold;">
         <div class="container">
-            <p class="text-center py-2">Universidad Tecnólogica de Huejotzingo<br>
+            <p class="text-center py-4">Universidad Tecnólogica de Huejotzingo<br>
                 Copyright © 2022 www.uth.edu.mx.mx<br>
             </p>
         </div>

@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Ver egresado')
 
 @section('template_title')
     {{ $egresado->name ?? 'Show Egresado' }}
 @endsection
 
-
-    <section class="content container-fluid">
-        <div class="row">
+@section('content')
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -157,4 +157,4 @@
                 </div>
             </div>
         </div>
-    </section>
+@stop

@@ -168,7 +168,7 @@ return [
     */
 
     'right_sidebar' => true,
-    'right_sidebar_icon' => 'fas fa-home',
+    'right_sidebar_icon' => 'fas fa-cog',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
@@ -324,7 +324,7 @@ return [
         [
             'text' => '| Reportes',
             'url' => '#',
-            'icon' => 'fa fa-file',
+            'icon' => 'fa fa-file-alt',
             'submenu' => [
                 [
                     'text' => '-- Reporte',
