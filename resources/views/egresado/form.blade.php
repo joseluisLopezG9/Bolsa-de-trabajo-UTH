@@ -19,8 +19,15 @@
             {!! $errors->first('apellidoMaterno', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Nivel de estudios') }}
-            {{ Form::text('nivelEstudios', $egresado->nivelEstudios, ['class' => 'form-control' . ($errors->has('nivelEstudios') ? ' is-invalid' : ''), 'placeholder' => 'Nivel de estudios']) }}
+            <h5>Nivel de estudios</h5>
+            <select class="selectpicker" title="Pick One">
+			<option data-hidden="true">
+			Elija una opción												
+			</option>
+			<option>- Técnico Superior Universitario</option>
+			<option>- Ingeniería</option>
+            <option>- Maestría</option>
+			</select>
             {!! $errors->first('nivelEstudios', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -30,7 +37,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Matricula') }}
-            {{ Form::text('matricula', $egresado->matricula, ['class' => 'form-control' . ($errors->has('matricula') ? ' is-invalid' : ''), 'placeholder' => 'Matricula']) }}
+            {{ Form::number('matricula', $egresado->matricula, ['class' => 'form-control' . ($errors->has('matricula') ? ' is-invalid' : ''), 'placeholder' => 'Ejemplo: 3530110410']) }}
             {!! $errors->first('matricula', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -40,7 +47,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Generación') }}
-            {{ Form::text('gen', $egresado->gen, ['class' => 'form-control' . ($errors->has('gen') ? ' is-invalid' : ''), 'placeholder' => 'Generación']) }}
+            {{ Form::number('gen', $egresado->gen, ['class' => 'form-control' . ($errors->has('gen') ? ' is-invalid' : ''), 'placeholder' => 'Generación']) }}
             {!! $errors->first('gen', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <br>
@@ -67,17 +74,17 @@
         </div>
         <div class="form-group">
             {{ Form::label('Teléfono') }}
-            {{ Form::text('tel', $egresado->tel, ['class' => 'form-control' . ($errors->has('tel') ? ' is-invalid' : ''), 'placeholder' => 'Teléfono']) }}
+            {{ Form::number('tel', $egresado->tel, ['class' => 'form-control' . ($errors->has('tel') ? ' is-invalid' : ''), 'placeholder' => 'Teléfono']) }}
             {!! $errors->first('tel', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Celular') }}
-            {{ Form::text('cel', $egresado->cel, ['class' => 'form-control' . ($errors->has('cel') ? ' is-invalid' : ''), 'placeholder' => 'Celular']) }}
+            {{ Form::number('cel', $egresado->cel, ['class' => 'form-control' . ($errors->has('cel') ? ' is-invalid' : ''), 'placeholder' => 'Celular']) }}
             {!! $errors->first('cel', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Email') }}
-            {{ Form::text('email', $egresado->email, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Email']) }}
+            {{ Form::Email('email', $egresado->email, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Email']) }}
             {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <br>
@@ -89,17 +96,17 @@
         </div>
         <div class="form-group">
             {{ Form::label('Contraseña') }}
-            {{ Form::text('contraseña', $egresado->contraseña, ['class' => 'form-control' . ($errors->has('contraseña') ? ' is-invalid' : ''), 'placeholder' => 'Contraseña']) }}
+            {{ Form::password('contraseña', $egresado->contraseña, ['class' => 'form-control' . ($errors->has('contraseña') ? ' is-invalid' : ''), 'placeholder' => 'Contraseña']) }}
             {!! $errors->first('contraseña', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Fecha alta') }}
-            {{ Form::text('fecha_alta', $egresado->fecha_alta, ['class' => 'form-control' . ($errors->has('fecha_alta') ? ' is-invalid' : ''), 'placeholder' => 'Fecha alta']) }}
+            {{ Form::date('fecha_alta', $egresado->fecha_alta, ['class' => 'form-control' . ($errors->has('fecha_alta') ? ' is-invalid' : ''), 'placeholder' => 'Fecha alta']) }}
             {!! $errors->first('fecha_alta', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Vigencia') }}
-            {{ Form::text('vigencia', $egresado->vigencia, ['class' => 'form-control' . ($errors->has('vigencia') ? ' is-invalid' : ''), 'placeholder' => 'Vigencia']) }}
+            {{ Form::date('vigencia', $egresado->vigencia, ['class' => 'form-control' . ($errors->has('vigencia') ? ' is-invalid' : ''), 'placeholder' => 'Vigencia']) }}
             {!! $errors->first('vigencia', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <br>
@@ -180,7 +187,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Folio') }}
-            {{ Form::text('folio', $egresado->folio, ['class' => 'form-control' . ($errors->has('folio') ? ' is-invalid' : ''), 'placeholder' => 'Folio']) }}
+            {{ Form::number('folio', $egresado->folio, ['class' => 'form-control' . ($errors->has('folio') ? ' is-invalid' : ''), 'placeholder' => 'Folio']) }}
             {!! $errors->first('folio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -191,9 +198,10 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-success">Limpiar</button>
+        <button type="reset" class="btn btn-success">Limpiar</button>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
+    <br>
 
     {!! Form::close() !!}
 

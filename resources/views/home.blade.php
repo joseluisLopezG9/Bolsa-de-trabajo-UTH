@@ -2,20 +2,41 @@
 
 @section('title', 'index')
 
+
 @section('content_header')
-    <center><h3 style="color: green;font-size: 35px;"> Bolsa de trabajo institucional</h3></center>
+<div class="info-box">
+            <span class="info-box-icon bg-success"><i class="far fa-envelope"></i></span>
+            <div class="info-box-content">
+            <span class="info-box-text">Usted tiene:</span>
+            <span class="info-box-number">| 30 mensajes sin leer |</span>
+</div>
+            <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
+            <div class="info-box-content">
+            <span class="info-box-text">Documentos sin subir</span>
+            <span class="info-box-number">| 14 |</span>
+            </div>
+
+            <span class="info-box-icon bg-success"><i class="far fa-calendar-alt"></i></span>
+            <div class="info-box-content">
+            <span class="info-box-text">Eventos pendientes</span>
+            <span class="info-box-number">| 7 |</span>
+            <span class="progress-description">
+            </span>
+            </div>
+</div>
+
+<br>
+<center><h3 style="color: green;font-size: 35px;"> Bolsa de trabajo institucional</h3></center>
 @stop
 
 @section('content')
-    <div class="card">
 
         <div class="card-header">
 
         <br>
-
-
         <center><img class="img-fluid" src="vendor/adminlte/dist/img/logoUTH.png" alt=""></center>
         <br>
+
         <br>
         <h3 class="card-title" style="color: green"> Bienvenido (a) </h3>
         </div>

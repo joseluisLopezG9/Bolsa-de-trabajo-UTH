@@ -33,26 +33,30 @@
                     @endif
 					<br>
 
-					<h6>Buscar Egresado por Folio</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
+				<div>
+                    <h6>Buscar egresado por Folio</h6>
+                    <div class="form-group w-25">
+                    <input type="text" class="form-control" id="">
+					<br>
+                    <center><button type="button" class="btn btn-outline-success">Buscar</button></center>
 					</div>
 					
 					<br>
 
-					<h6>Buscar Egresado por Apellido Paterno</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
+					<h6>Buscar egresado por Apellido Paterno</h6>
+                    <div class="form-group w-25">
+                    <input type="text" class="form-control" id="">
+					<br>
+                    <center><button type="button" class="btn btn-outline-success">Buscar</button></center>
 					</div>
 
 					<br>
 
-					<h6>Buscar Egresado por Matricula</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
+					<h6>Buscar egresado Matricula</h6>
+                    <div class="form-group w-25">
+                    <input type="text" class="form-control" id="">
+					<br>
+                    <center><button type="button" class="btn btn-outline-success">Buscar</button></center>
 					</div>
 
 					<br>
@@ -71,31 +75,19 @@
 					</div>
 
 					<br>
-
-				
-					<h6>Buscar Egresado por Nombre</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
 					<br>
 
-					<h6>Buscar Egresado por Apellido Materno</h6>
-					<div class="input-group">
-					<input type="search" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
-					</div>
-
+					<h6>Buscar egresado Fecha</h6>
+                    <div class="form-group w-25">
+                    <input type="date" class="form-control" id="">
 					<br>
-
-					<h6>Buscar Egresado por Fecha</h6>
-					<div class="input-group">
-					<input type="date" aria-label="Search" aria-describedby="search-addon" />
-					<button type="button" class="btn btn-outline-success">Buscar</button>
+                    <center><button type="button" class="btn btn-outline-success">Buscar</button></center>
 					</div>
+				</div>	
 
-					<p align="center">RESULTADOS</p>
+				<center><h4 id="card_title">
+                 {{ __('Resultados') }}
+				</h4></center>
 				<div class="card">
                     <div class="card-body">
                         <div class="table-responsive">

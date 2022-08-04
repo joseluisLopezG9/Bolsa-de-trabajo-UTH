@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Consultar egresado')
+@section('title', 'Egresados vigentes')
 
 @section('css')
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -52,12 +52,12 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $egresado->name }}</td>
-											<td>{{ $egresado->lastname }}</td>
-											<td>{{ $egresado->lastname2 }}</td>
-											<td>{{ $egresado->enrollment }}</td>
-											<td>{{ $egresado->career }}</td>
-                                            <td>{{ $egresado->validity }}</td>
+											<td>{{ $egresado->nombre }}</td>
+											<td>{{ $egresado->apellidoPaterno }}</td>
+											<td>{{ $egresado->apellidoMaterno }}</td>
+											<td>{{ $egresado->matricula }}</td>
+											<td>{{ $egresado->carrera }}</td>
+                                            <td>{{ $egresado->vigencia }}</td>
                                             <td>
                                                 <form action="{{ route('egresados.destroy',$egresado->id) }}" method="POST">
                                                     <a class="btn btn btn-success" href="{{ route('#',$egresado->id) }}">Notificar</a>
@@ -71,7 +71,7 @@
 					</div>
                 </div>
             </div>
-                {!! $egresados->links() !!}
+                
             </div>
         </div>
     </div>

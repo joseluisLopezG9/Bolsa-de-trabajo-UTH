@@ -17,7 +17,9 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Nuevo Egresado</span>
+                    <h4 id="card_title">
+                                {{ __('Nuevo Egresado') }}
+					</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('egresados.store') }}"  role="form" enctype="multipart/form-data">

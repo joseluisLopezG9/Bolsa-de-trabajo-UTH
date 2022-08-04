@@ -2,9 +2,6 @@
 
 @section('title', 'Ver egresado')
 
-@section('template_title')
-    {{ $egresado->name ?? 'Show Egresado' }}
-@endsection
 
 @section('content')
             <div class="col-md-12">
@@ -157,4 +154,4 @@
                 </div>
             </div>
         </div>
-@stop
+@endsection
