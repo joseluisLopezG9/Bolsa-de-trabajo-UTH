@@ -107,17 +107,25 @@ class EgresadoController extends Controller
             ->with('success', 'El egresado ha sido eliminado exitosamente');
     }
 
-    public function vigentes($id)
+    public function verVigentes()
     {
-        $egresado = Egresado::find($id);
-
-        return view('egresado.vigentes', compact('egresado'));
+        return view('egresado.vigentes');
     }
-
+    
     public function NOvigentes($id)
     {
         $egresado = Egresado::find($id);
 
         return view('egresado.NOvigentes', compact('egresado'));
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function datosAcceso()
+    {
+        return view('egresado.datos_acceso');
     }
 }

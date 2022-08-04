@@ -51,39 +51,39 @@ class Egresado extends Model
 {
     
     static $rules = [
-		'name' => 'required',
-		'lastname' => 'required',
-		'lastname2' => 'required',
-		'level' => 'required',
-		'career' => 'required',
-		'enrollment' => 'required',
+		'nombre' => 'required',
+		'apellidoPaterno' => 'required',
+		'apellidoMaterno' => 'required',
+		'nivelEstudios' => 'required',
+		'carrera' => 'required',
+		'matricula' => 'required',
 		'division' => 'required',
 		'gen' => 'required',
-		'address' => 'required',
-		'suburb' => 'required',
-		'state' => 'required',
+		'domicilio' => 'required',
+		'colonia' => 'required',
+		'estado' => 'required',
 		'mun' => 'required',
 		'tel' => 'required',
 		'cel' => 'required',
 		'email' => 'required',
-		'user' => 'required',
-		'pass' => 'required',
-		'reg_date' => 'required',
-		'validity' => 'required',
-		'skills' => 'required',
-		'skills1' => 'required',
-		'skills2' => 'required',
-		'skills3' => 'required',
-		'skills4' => 'required',
-		'skills5' => 'required',
-		'skills6' => 'required',
-		'skills7' => 'required',
-		'skills8' => 'required',
-		'skills9' => 'required',
+		'usuario' => 'required',
+		'contraseña' => 'required',
+		'fecha_alta' => 'required',
+		'vigencia' => 'required',
+		'n1' => 'required',
+		'n2' => 'required',
+		'n3' => 'required',
+		'n4' => 'required',
+		'n5' => 'required',
+		'n6' => 'required',
+		'n7' => 'required',
+		'n8' => 'required',
+		'n9' => 'required',
+		'n10' => 'required',
 		'area' => 'required',
 		'cv' => 'required',
-		'invoice' => 'required',
-		'remark' => 'required',
+		'folio' => 'required',
+		'observaciones' => 'required',
     ];
 
     protected $perPage = 20;
@@ -93,7 +93,7 @@ class Egresado extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','lastname','lastname2','level','career','enrollment','division','gen','address','suburb','state','mun','tel','cel','email','user','pass','reg_date','validity','skills','skills1','skills2','skills3','skills4','skills5','skills6','skills7','skills8','skills9','area','cv','invoice','remark'];
+    protected $fillable = ['nombre','apellidoPaterno','apellidoMaterno','nivelEstudios','carrera','matricula','division','gen','domicilio','colonia','estado','mun','tel','cel','email','usuario','contraseña','fecha_alta','vigencia','n1','n2','n3','n4','n5','n6','n7','n8','n9','n10','area','cv','folio','observaciones'];
 
 
 

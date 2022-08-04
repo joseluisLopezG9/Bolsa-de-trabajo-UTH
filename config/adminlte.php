@@ -253,7 +253,7 @@ return [
                 ],
                 [   
                     'text' => '-- Consultar egresado',
-                    'url' => 'egresados'
+                    'url' => 'egresados '
                 ],
                 [   
                     'text' => '-- Vigentes',
@@ -265,7 +265,7 @@ return [
                 ],
                 [   
                     'text' => '-- Usuario y contraseña',
-                    'url' => '#'
+                    'route' => 'datos'
                 ]
             ]
         ],
@@ -277,7 +277,7 @@ return [
             'submenu' => [
                 [
                     'text' => '-- Nueva empresa',
-                    'url' => '#'
+                    'url' => 'empresas/create'
                 ],
                 [
                     'text' => '-- Consultar empresa',

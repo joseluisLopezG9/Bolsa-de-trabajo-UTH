@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -24,11 +25,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 
-Route::resource('egresados', 'EgresadoController');
+Route::resource('/egresados', 'EgresadoController');
+
+Route::resource('/empresas', 'EmpresaController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
 
-Route::get('/egresado', 'EgresadoController@index')->name('egresado');
+Route::get('/egresados/vigentes', 'EgresadoController@verVigentes')->name('vigentes');
+
+Route::get('/egresado/datosAcceso', 'EgresadoController@datosAcceso')->name('datos');
+
+
+
+
+
+
+
 
