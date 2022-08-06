@@ -31,7 +31,7 @@ class Vacantes extends Migration
             $table->string('exp');
             $table->string('conocimientos');
             $table->string('habilidades');
-            $table->string('sueldo');
+            $table->double('sueldo', 8, 2);
             $table->string('horario');
             $table->string('entrevistador');
             $table->string('contacto');
