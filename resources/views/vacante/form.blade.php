@@ -2,17 +2,17 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('empresa_id') }}
-            {{ Form::text('empresa_id', $vacante->empresa_id, ['class' => 'form-control' . ($errors->has('empresa_id') ? ' is-invalid' : ''), 'placeholder' => 'Empresa Id']) }}
+            {{ Form::label('Empresa') }}
+            {{ Form::select('empresa_id', $empresas, $vacante->empresa_id, ['class' => 'form-control' . ($errors->has('empresa_id') ? ' is-invalid' : ''), 'placeholder' => 'Empresa']) }}
             {!! $errors->first('empresa_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('puesto') }}
+            {{ Form::label('Puesto') }}
             {{ Form::text('puesto', $vacante->puesto, ['class' => 'form-control' . ($errors->has('puesto') ? ' is-invalid' : ''), 'placeholder' => 'Puesto']) }}
             {!! $errors->first('puesto', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nivel') }}
+            {{ Form::label('Nivel') }}
             {{ Form::text('nivel', $vacante->nivel, ['class' => 'form-control' . ($errors->has('nivel') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
             {!! $errors->first('nivel', '<div class="invalid-feedback">:message</div>') !!}
         </div>
