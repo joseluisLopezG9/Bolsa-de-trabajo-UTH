@@ -281,11 +281,11 @@ return [
                 ],
                 [
                     'text' => '-- Consultar empresa',
-                    'url' => '#'
+                    'url' => 'empresas'
                 ],
                 [
                     'text' => '-- Nueva actividad',
-                    'url' => '#'
+                    'route' => 'nuevaAct'
                 ]
             ]
         ],

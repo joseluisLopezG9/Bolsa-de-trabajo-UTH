@@ -108,6 +108,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+											<td>{{ $egresado->id}}</td>
 											<td>{{ $egresado->nombre }}</td>
 											<td>{{ $egresado->apellidoPaterno }}</td>
 											<td>{{ $egresado->apellidoMaterno }}</td>

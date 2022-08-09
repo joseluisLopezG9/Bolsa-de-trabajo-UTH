@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Nueva empresa')
 
 @section('template_title')
     Create Empresa
@@ -9,17 +11,20 @@
         <div class="row">
             <div class="col-md-12">
 
+            <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
                 @includeif('partials.errors')
 
+                
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Empresa</span>
+                    <h4 id="card_title">
+                                {{ __('Nueva Empresa') }}
+					</h4>
                     </div>
-                    <div class="card-body">
                         <form method="POST" action="{{ route('empresas.store') }}"  role="form" enctype="multipart/form-data">
-                            @csrf
+                        @csrf
 
-                            @include('empresa.form')
+                        @include('empresa.form')
 
                         </form>
                     </div>

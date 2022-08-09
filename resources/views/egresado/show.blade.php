@@ -3,6 +3,10 @@
 @section('title', 'Ver egresado')
 
 
+@section('template_title')
+    {{ $empresa->name ?? 'Show Empresa' }}
+@endsection
+
 @section('content')
             <div class="col-md-12">
                 <div class="card">

@@ -37,6 +37,8 @@ Route::get('/egresados/vigentes', 'EgresadoController@verVigentes')->name('vigen
 
 Route::get('/egresado/datosAcceso', 'EgresadoController@datosAcceso')->name('datos');
 
+Route::get('/empresa/nuevaActividad', 'EmpresaController@NvaActividad')->name('nuevaAct');
+
 
 
 

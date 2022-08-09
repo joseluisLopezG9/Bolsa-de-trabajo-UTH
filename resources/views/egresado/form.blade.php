@@ -198,8 +198,8 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="reset" class="btn btn-success">Limpiar</button>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="reset" class="btn btn-primary">Limpiar</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
     </div>
     <br>
 

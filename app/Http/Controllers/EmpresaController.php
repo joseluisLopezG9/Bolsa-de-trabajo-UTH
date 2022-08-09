@@ -106,4 +106,13 @@ class EmpresaController extends Controller
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa deleted successfully');
     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function NvaActividad()
+    {
+        return view('empresa.nva_actividad');
+    }
 }
