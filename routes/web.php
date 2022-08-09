@@ -29,6 +29,8 @@ Route::resource('/egresados', 'EgresadoController');
 
 Route::resource('/empresas', 'EmpresaController');
 
+Route::resource('/vacantes', 'VacanteController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');

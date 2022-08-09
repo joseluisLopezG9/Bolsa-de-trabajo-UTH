@@ -48,7 +48,7 @@ class VacanteController extends Controller
         $vacante = Vacante::create($request->all());
 
         return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante created successfully.');
+            ->with('success', 'Vacante creada exitosamente');
     }
 
     /**
@@ -91,7 +91,7 @@ class VacanteController extends Controller
         $vacante->update($request->all());
 
         return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante updated successfully');
+            ->with('success', 'Vacante actualizada exitosamente');
     }
 
     /**
@@ -104,6 +104,6 @@ class VacanteController extends Controller
         $vacante = Vacante::find($id)->delete();
 
         return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante deleted successfully');
+            ->with('success', 'Vacante eliminada exitosamente');
     }
 }

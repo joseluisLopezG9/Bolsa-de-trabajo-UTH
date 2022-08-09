@@ -297,11 +297,11 @@ return [
             'submenu' => [
                 [
                     'text' => '-- Nueva vacante',
-                    'url' => '#'
+                    'url' => 'vacantes/create'
                 ],
                 [
                     'text' => '-- Consultar vacante',
-                    'url' => '#'
+                    'url' => 'vacantes'
                 ]
             ]
         ],
