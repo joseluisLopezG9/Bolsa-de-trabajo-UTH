@@ -52,7 +52,7 @@
 
 					<br>
 
-					<h6>Buscar egresado Matricula</h6>
+					<h6>Buscar egresado por Matricula</h6>
                     <div class="form-group w-25">
                     <input type="text" class="form-control" id="">
 					<br>
@@ -77,7 +77,7 @@
 					<br>
 					<br>
 
-					<h6>Buscar egresado Fecha</h6>
+					<h6>Buscar egresado por Fecha</h6>
                     <div class="form-group w-25">
                     <input type="date" class="form-control" id="">
 					<br>
@@ -106,8 +106,7 @@
                                 <tbody>
                                     @foreach ($egresados as $egresado)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                    
 											<td>{{ $egresado->id}}</td>
 											<td>{{ $egresado->nombre }}</td>
 											<td>{{ $egresado->apellidoPaterno }}</td>

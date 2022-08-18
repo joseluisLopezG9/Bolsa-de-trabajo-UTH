@@ -19,15 +19,16 @@
             {!! $errors->first('apellidoMaterno', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            <h5>Nivel de estudios</h5>
-            <select class="selectpicker" title="Pick One">
-			<option data-hidden="true">
-			Elija una opción												
-			</option>
-			<option>- Técnico Superior Universitario</option>
-			<option>- Ingeniería</option>
-            <option>- Maestría</option>
-			</select>
+            {{ Form::label('-- Elija el área de especialización') }}
+            {{ Form::select('area', $egresado, $egresado->area, ['class' => 'form-control' . ($errors->has('area') ? ' is-invalid' : ''), 'placeholder' => 'Area']) }}
+                    @foreach ($egresado as $egresados)
+                        <option value=" {{ $egresado['id'] }} "> {{ $egresado['area'] }}</option>
+                    @endforeach
+		    {!! $errors->first('area', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+        {{ Form::label('Nivel de estudios') }}
+            {{ Form::text('nivelEstudios', $egresado->nivelEstudios, ['class' => 'form-control' . ($errors->has('nivelEstudios') ? ' is-invalid' : ''), 'placeholder' => 'Nivel de estudios']) }}
             {!! $errors->first('nivelEstudios', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -161,24 +162,11 @@
             {{ Form::text('n10', $egresado->n10, ['class' => 'form-control' . ($errors->has('n10') ? ' is-invalid' : ''), 'placeholder' => 'N° 10']) }}
             {!! $errors->first('n10', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        <br>
         <div class="form-group">
-            <h5>Área de especialización</h5>
-            <select class="selectpicker" title="Pick One">
-			<option data-hidden="true">
-			Elija una opción												
-			</option>
-			<option>TICS - Desarrollo de Software Multiplataforma</option>
-			<option>TICS - Entornos Virtuales y Negocios Digitales</option>
-			<option>TICS - Redes Inteligentes y Ciberseguridad</option>
-			<option>Mecatrontrónica - Robótica</option>
-            <option>Mecatrontrónica - Instalaciones Eléctricas Eficientes</option>
-            <option>Procesos Industriales - Alimentos Gourmet</option>
-            <option>Procesos Industriales - Automotriz</option>
-			</select>
+            {{ Form::label('area') }}
+            {{ Form::text('area', $egresado->area, ['class' => 'form-control' . ($errors->has('area') ? ' is-invalid' : ''), 'placeholder' => 'Area']) }}
             {!! $errors->first('area', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        <br>
         <div class="form-group">
             {{ Form::label('Cargar CV') }}
             <br>

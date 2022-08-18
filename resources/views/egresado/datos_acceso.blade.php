@@ -95,7 +95,7 @@
                         <div>
                         <h6>Contraseña</h6>
                         <div class="form-group w-25">
-                        <input type="text" class="form-control" id="">
+                        <input type="password" class="form-control" id="">
                         </div>
                         <br>
                         <center><button type="submit" class="btn  btn-success">Consultar</button></center>

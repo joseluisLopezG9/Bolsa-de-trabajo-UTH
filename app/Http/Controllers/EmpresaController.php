@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vacante;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,10 @@ class EmpresaController extends Controller
     {
         $empresa = new Empresa();
         return view('empresa.create', compact('empresa'));
+
+        $empresas = Empresa::pluck('nombre', 'id');
+
+        return view('vacante.create', compact('vacante','empresas'));
     }
 
     /**
@@ -75,6 +80,8 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id);
 
         return view('empresa.edit', compact('empresa'));
+
+
     }
 
     /**
