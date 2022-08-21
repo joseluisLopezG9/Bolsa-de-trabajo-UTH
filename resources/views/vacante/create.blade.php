@@ -19,7 +19,7 @@
                         <span class="card-title"><h4>Nueva Vacante</h4></span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('vacantes.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.vacantes.store') }}" role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('vacante.form')

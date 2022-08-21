@@ -249,23 +249,28 @@ return [
             'submenu' => [
                 [
                     'text' => '-- Nuevo egresado',
-                    'url' => 'egresados/create'
+                    'url' => 'egresados/create',
+                    'can' => 'admin.egresados.create'
                 ],
                 [   
                     'text' => '-- Consultar egresado',
-                    'url' => 'egresados '
+                    'url' => 'egresados',
+                    'can' => 'admin.egresados.index'
                 ],
                 [   
                     'text' => '-- Vigentes',
-                    'url' => 'egresados/vigentes'
+                    'route' => 'admin.egresadosVigentes',
+                    'can' => 'admin.egresados.edit'
                 ],
                 [    
                     'text' => '-- NO vigentes',
-                    'url' => 'egresados/NOvigentes'
+                    'url' => 'egresados/NOvigentes',
+                    'can' => 'admin.egresados.edit'
                 ],
                 [   
                     'text' => '-- Usuario y contraseña',
-                    'route' => 'datos'
+                    'route' => 'admin.datosAcceso',
+                    'can' => 'admin.egresados.edit'
                 ]
             ]
         ],
@@ -277,47 +282,53 @@ return [
             'submenu' => [
                 [
                     'text' => '-- Nueva empresa',
-                    'url' => 'empresas/create'
+                    'url' => 'empresas/create',
+                    'can' => 'admin.empresas.create'
                 ],
                 [
                     'text' => '-- Consultar empresa',
-                    'url' => 'empresas'
+                    'url' => 'empresas',
+                    'can' => 'admin.empresas.index'
                 ],
                 [
                     'text' => '-- Nueva actividad',
-                    'route' => 'nuevaAct'
+                    'route' => 'admin.nvaActividad',
+                    'can' => 'admin.empresas.edit'
                 ]
             ]
         ],
         [
 
             'text' => '| Vacantes',
-            'url' => '#',
             'icon' => 'fa fa-folder-open',
             'submenu' => [
                 [
                     'text' => '-- Nueva vacante',
-                    'url' => 'vacantes/create'
+                    'url' => 'vacantes/create',
+                    'can' => 'admin.vacantes.create'
                 ],
                 [
                     'text' => '-- Consultar vacante',
-                    'url' => 'vacantes'
+                    'url' => 'vacantes',
+                    'can' => 'admin.vacantes.index'
                 ]
             ]
         ],
         [
-
-            'text' => '| Postulaciones',
+            
+            'text' => '| | Postulaciones',
             'url' => '#',
             'icon' => 'fa fa-id-card',
             'submenu' => [
                 [
                     'text' => '-- Pendientes',
-                    'url' => '#'
+                    'url' => '#',
+                    'can' => 'admin.egresados.create'
                 ],
                 [
                     'text' => '-- Colocados',
-                    'url' => '#'
+                    'url' => '#',
+                    'can' => 'admin.egresados.create'
                 ]
             ]
         ],
@@ -328,7 +339,8 @@ return [
             'submenu' => [
                 [
                     'text' => '-- Reporte',
-                    'url' => '#'
+                    'url' => '#',
+                    'can' => 'admin.egresados.create'
                 ]
             ]
         ],
@@ -337,11 +349,13 @@ return [
             'text' => 'PERFIL',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
+            'can' => 'admin.egresados.create'
         ],
         [
             'text' => 'CAMBIAR MI CONTRASEÑA',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin.egresados.create'
         ],
     ],
 

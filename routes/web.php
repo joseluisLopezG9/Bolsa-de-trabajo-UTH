@@ -20,26 +20,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 
 
-Route::resource('/egresados', 'EgresadoController');
+Route::resource('/egresados', 'EgresadoController')->names('admin.egresados');
 
-Route::resource('/empresas', 'EmpresaController');
+Route::resource('/empresas', 'EmpresaController')->names('admin.empresas');
 
-Route::resource('/vacantes', 'VacanteController');
+Route::resource('/vacantes', 'VacanteController')->names('admin.vacantes');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');
 
-Route::get('/egresados/vigentes', 'EgresadoController@verVigentes')->name('vigentes');
+Route::get('/egresados/vigentes', 'EgresadoController@verVigentes')->name('admin.egresadosVigentes');
 
-Route::get('/egresado/datosAcceso', 'EgresadoController@datosAcceso')->name('datos');
+Route::get('/egresado/datosAcceso', 'EgresadoController@datosAcceso')->name('admin.datosAcceso');
 
-Route::get('/empresa/nuevaActividad', 'EmpresaController@NvaActividad')->name('nuevaAct');
+Route::get('/empresa/nuevaActividad', 'EmpresaController@NvaActividad')->name('admin.nvaActividad');
 
 
 

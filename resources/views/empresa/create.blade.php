@@ -21,7 +21,7 @@
                                 {{ __('Nueva Empresa') }}
 					</h4>
                     </div>
-                        <form method="POST" action="{{ route('empresas.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.empresas.store') }}"  role="form" enctype="multipart/form-data">
                         @csrf
 
                         @include('empresa.form')

@@ -1,42 +1,44 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Ver vacante')
 
 @section('template_title')
-    Vacante
+    Ver Vacante
 @endsection
 
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="col-md-12">
+            <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+                @includeif('partials.errors')
 
-                            <span id="card_title">
-                                {{ __('Vacante') }}
-                            </span>
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                             <div class="float-right">
-                                <a href="{{ route('vacantes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
+                        <h4 id="card_title">
+                            {{ __('Consultar Empresa') }}
+                        </h4>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                </div>
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+                <br>
 
+                    <center><h4 id="card_title">
+                        {{ __('Resultados') }}
+                       </h4></center>
+                       <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover" id="usuarios">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Empresa Id</th>
+										<th>ID Empresa</th>
 										<th>Puesto</th>
 										<th>Nivel</th>
 										<th>Num Candidatos</th>
@@ -56,8 +58,7 @@
 										<th>Otros</th>
 										<th>Beneficios</th>
 										<th>Folio</th>
-
-                                        <th></th>
+                                        <th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -107,3 +108,37 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap4.min.js"></script>
+	<script>
+		$('#usuarios').DataTable({
+			responsive: true,
+			autoWidth: false,
+		
+		"language": {
+            "lengthMenu": "Mostrar " + 
+						  `<select class="custom-select custom-select-sm form-control form-control-sm">
+						  <option value = '10'>10</option>
+						  <option value = '20'>20</option>
+						  <option value = '50'>50</option>
+						  <option value = '-1'>Todos</option>
+						  </select>` + 
+						  "registros por página",
+            "zeroRecords": "No se encontraron resultados en la búsqueda",
+            "info": "Mostrando la página _PAGE_ de _PAGES_",
+            "infoEmpty": "No se encontraron registros",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+			'search': 'Buscar:',
+			'paginate': {
+				'next': 'Siguiente',
+				'previous': 'Anterior'
+			}
+        }
+		});	
+	</script>
+@endsection
+
