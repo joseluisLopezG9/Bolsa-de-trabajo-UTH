@@ -2,25 +2,29 @@
 
 @section('title', 'Ver vacante')
 
-@section('template_title')
-    Ver Vacante
+@section('css')
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap4.min.css">
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
+
 
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-            <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
-                @includeif('partials.errors')
-
+            <div class="col-sm-12">
+            <div class="card">
                 <div class="card-header">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-
+                <div style="display: flex; justify-content: space-between; align-items: center;">
                         <h4 id="card_title">
                             {{ __('Consultar Empresa') }}
                         </h4>
-                    </div>
                 </div>
+            </div>
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success">
                         <p>{{ $message }}</p>
@@ -30,35 +34,21 @@
 
                     <center><h4 id="card_title">
                         {{ __('Resultados') }}
-                       </h4></center>
-                       <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover" id="usuarios">
+                    </h4></center>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover" id="usuarios">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-										<th>ID Empresa</th>
-										<th>Puesto</th>
-										<th>Nivel</th>
-										<th>Num Candidatos</th>
-										<th>Num Vacantes</th>
-										<th>Edad</th>
-										<th>Genero</th>
-										<th>Idioma</th>
-										<th>Estado Civil</th>
-										<th>Exp</th>
-										<th>Conocimientos</th>
-										<th>Habilidades</th>
+                                        <th>Folio</th>
+										<th>Nombre</th>
+										<th>Empresa</th>
+										<th>Nivel de estudios</th>
 										<th>Sueldo</th>
-										<th>Horario</th>
-										<th>Entrevistador</th>
-										<th>Contacto</th>
-										<th>Confidencial</th>
-										<th>Otros</th>
-										<th>Beneficios</th>
-										<th>Folio</th>
-                                        <th>
+										<th>Horario de entrevista</th>
+                                        <th>Fecha alta</th>
+										<th>Acciones</th>   
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,27 +56,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+                                            <td>{{ $vacante->id }}</td>
 											<td>{{ $vacante->empresa_id }}</td>
 											<td>{{ $vacante->puesto }}</td>
 											<td>{{ $vacante->nivel }}</td>
-											<td>{{ $vacante->num_candidatos }}</td>
-											<td>{{ $vacante->num_vacantes }}</td>
-											<td>{{ $vacante->edad }}</td>
-											<td>{{ $vacante->genero }}</td>
-											<td>{{ $vacante->idioma }}</td>
-											<td>{{ $vacante->estado_civil }}</td>
-											<td>{{ $vacante->exp }}</td>
-											<td>{{ $vacante->conocimientos }}</td>
-											<td>{{ $vacante->habilidades }}</td>
 											<td>{{ $vacante->sueldo }}</td>
 											<td>{{ $vacante->horario }}</td>
-											<td>{{ $vacante->entrevistador }}</td>
-											<td>{{ $vacante->contacto }}</td>
-											<td>{{ $vacante->confidencial }}</td>
-											<td>{{ $vacante->otros }}</td>
-											<td>{{ $vacante->beneficios }}</td>
-											<td>{{ $vacante->folio }}</td>
-
+                                            <td>{{ $vacante->created_at }}</td>
                                             <td>
                                                 <form action="{{ route('vacantes.destroy',$vacante->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('vacantes.show',$vacante->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
@@ -103,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
                 {!! $vacantes->links() !!}
             </div>
         </div>
@@ -127,7 +104,7 @@
 						  <option value = '50'>50</option>
 						  <option value = '-1'>Todos</option>
 						  </select>` + 
-						  "registros por página",
+						  " registros por página",
             "zeroRecords": "No se encontraron resultados en la búsqueda",
             "info": "Mostrando la página _PAGE_ de _PAGES_",
             "infoEmpty": "No se encontraron registros",
