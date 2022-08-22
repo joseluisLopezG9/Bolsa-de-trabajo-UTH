@@ -16,8 +16,14 @@ class LevelSeeder extends Seeder
 
         DB::table('niveles')->insert([
             'nombre' => 'TSU',
+        ]);
+
+        DB::table('niveles')->insert([
             'nombre' => 'Ingeniería',
-            'nombre' => 'Maestría'
+        ]);
+
+        DB::table('niveles')->insert([
+            'nombre' => 'Maestría',
         ]);
     }
 }
