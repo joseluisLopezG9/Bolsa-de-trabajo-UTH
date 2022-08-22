@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
         'name' => 'Marco Antonio Ramírez',
         'email' => 'marco@gmail.com',
-        'password' => bcrypt('real123')
+        'password' => bcrypt('realmadrid10')
         ])->assignRole('Observador');
     
     }

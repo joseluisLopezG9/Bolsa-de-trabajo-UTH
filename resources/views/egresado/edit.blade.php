@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Actualizar egresado')
+@section('title', 'Editar egresado')
 
 @section('template_title')
     Update Egresado
@@ -15,7 +15,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Actualizar Egresado</span>
+                        <span class="card-title"><h5>Editar Egresado</h5></span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('egresados.update', $egresado->id) }}"  role="form" enctype="multipart/form-data">

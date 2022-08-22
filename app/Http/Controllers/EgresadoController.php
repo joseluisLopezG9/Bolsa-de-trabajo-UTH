@@ -48,7 +48,7 @@ class EgresadoController extends Controller
         $egresado = Egresado::create($request->all());
 
         return redirect()->route('egresados.index')
-            ->with('success', 'El egresado ha sido creado exitosamente.');
+            ->with('success', 'Egresado creado');
     }
 
     /**
@@ -91,7 +91,7 @@ class EgresadoController extends Controller
         $egresado->update($request->all());
 
         return redirect()->route('egresados.index')
-            ->with('success', 'El egresado ha sido actualizado exitosamente');
+            ->with('success', 'Egresado actualizado');
     }
 
     /**
@@ -104,28 +104,6 @@ class EgresadoController extends Controller
         $egresado = Egresado::find($id)->delete();
 
         return redirect()->route('egresados.index')
-            ->with('success', 'El egresado ha sido eliminado exitosamente');
-    }
-
-    public function verVigentes()
-    {
-        return view('egresado.vigentes');
-    }
-    
-    public function NOvigentes($id)
-    {
-        $egresado = Egresado::find($id);
-
-        return view('egresado.NOvigentes', compact('egresado'));
-    }
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function datosAcceso()
-    {
-        return view('egresado.datos_acceso');
+            ->with('success', 'Egresado eliminado');
     }
 }

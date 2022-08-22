@@ -29,8 +29,8 @@
                             {{ $vacante->puesto }}
                         </div>
                         <div class="form-group">
-                            <strong>Nivel:</strong>
-                            {{ $vacante->nivel }}
+                            <strong>Nivel Id:</strong>
+                            {{ $vacante->nivel_id }}
                         </div>
                         <div class="form-group">
                             <strong>Num Candidatos:</strong>
@@ -57,8 +57,8 @@
                             {{ $vacante->estado_civil }}
                         </div>
                         <div class="form-group">
-                            <strong>Exp:</strong>
-                            {{ $vacante->exp }}
+                            <strong>Experiencia:</strong>
+                            {{ $vacante->experiencia }}
                         </div>
                         <div class="form-group">
                             <strong>Conocimientos:</strong>
@@ -99,6 +99,10 @@
                         <div class="form-group">
                             <strong>Folio:</strong>
                             {{ $vacante->folio }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Area Id:</strong>
+                            {{ $vacante->area_id }}
                         </div>
 
                     </div>

@@ -1,21 +1,22 @@
 @extends('adminlte::page')
 
-@section('title', 'Ver egresado')
-
+@section('title', 'Mostrar egresado')
 
 @section('template_title')
-    {{ $empresa->name ?? 'Show Empresa' }}
+    {{ $egresado->name ?? 'Show Egresado' }}
 @endsection
 
 @section('content')
+    <section class="content container-fluid">
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <h3>Mostrar egresado </h3>
+                            <span class="card-title"><h5>Mostrar Egresado</h5></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-success" href="{{ route('egresados.index') }}">Regresar</a>
+                            <a class="btn btn-primary" href="{{ route('egresados.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -26,20 +27,20 @@
                             {{ $egresado->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellido Paterno:</strong>
+                            <strong>Apellidopaterno:</strong>
                             {{ $egresado->apellidoPaterno }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellido Materno:</strong>
+                            <strong>Apellidomaterno:</strong>
                             {{ $egresado->apellidoMaterno }}
                         </div>
                         <div class="form-group">
-                            <strong>Nivel de Estudios:</strong>
-                            {{ $egresado->nivelEstudios }}
+                            <strong>Nivel Id:</strong>
+                            {{ $egresado->nivel_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Carrera:</strong>
-                            {{ $egresado->carrera }}
+                            <strong>Carrera Id:</strong>
+                            {{ $egresado->carrera_id }}
                         </div>
                         <div class="form-group">
                             <strong>Matricula:</strong>
@@ -50,8 +51,8 @@
                             {{ $egresado->division }}
                         </div>
                         <div class="form-group">
-                            <strong>Generación:</strong>
-                            {{ $egresado->gen }}
+                            <strong>Generacion Id:</strong>
+                            {{ $egresado->generacion_id }}
                         </div>
                         <div class="form-group">
                             <strong>Domicilio:</strong>
@@ -62,20 +63,20 @@
                             {{ $egresado->colonia }}
                         </div>
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $egresado->estado }}
+                            <strong>Estado Id:</strong>
+                            {{ $egresado->estado_id }}
                         </div>
                         <div class="form-group">
                             <strong>Municipio:</strong>
-                            {{ $egresado->mun }}
+                            {{ $egresado->municipio }}
                         </div>
                         <div class="form-group">
-                            <strong>Teléfono:</strong>
-                            {{ $egresado->tel }}
+                            <strong>Telefono:</strong>
+                            {{ $egresado->telefono }}
                         </div>
                         <div class="form-group">
                             <strong>Celular:</strong>
-                            {{ $egresado->cel }}
+                            {{ $egresado->celular }}
                         </div>
                         <div class="form-group">
                             <strong>Email:</strong>
@@ -98,51 +99,51 @@
                             {{ $egresado->vigencia }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °1</strong>
+                            <strong>N1:</strong>
                             {{ $egresado->n1 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °2:</strong>
+                            <strong>N2:</strong>
+                            {{ $egresado->n2 }}
+                        </div>
+                        <div class="form-group">
+                            <strong>N3:</strong>
                             {{ $egresado->n3 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °3:</strong>
-                            {{ $egresado->n3 }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Competencia °4:</strong>
+                            <strong>N4:</strong>
                             {{ $egresado->n4 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °5:</strong>
+                            <strong>N5:</strong>
                             {{ $egresado->n5 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °6:</strong>
+                            <strong>N6:</strong>
                             {{ $egresado->n6 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °7:</strong>
+                            <strong>N7:</strong>
                             {{ $egresado->n7 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °8:</strong>
+                            <strong>N8:</strong>
                             {{ $egresado->n8 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °9:</strong>
+                            <strong>N9:</strong>
                             {{ $egresado->n9 }}
                         </div>
                         <div class="form-group">
-                            <strong>Competencia °10:</strong>
+                            <strong>N10:</strong>
                             {{ $egresado->n10 }}
                         </div>
                         <div class="form-group">
-                            <strong>Área:</strong>
-                            {{ $egresado->area }}
+                            <strong>Area Id:</strong>
+                            {{ $egresado->area_id }}
                         </div>
                         <div class="form-group">
-                            <strong>CV:</strong>
+                            <strong>Cv:</strong>
                             {{ $egresado->cv }}
                         </div>
                         <div class="form-group">
@@ -158,4 +159,5 @@
                 </div>
             </div>
         </div>
+    </section>
 @endsection

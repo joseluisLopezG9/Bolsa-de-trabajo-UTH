@@ -21,14 +21,18 @@ class Empresas extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('domicilio');
-            $table->string('tel');
-            $table->string('giro');
-            $table->string('estado');
+            $table->string('telefono');
+            $table->bigInteger('giro_id')->unsigned();
+            $table->bigInteger('estado_id')->unsigned();
             $table->string('ciudad');
-            $table->string('actividad');
-            $table->string('observaciones');
+            $table->bigInteger('actividad_id')->unsigned();
+            $table->string('observaciones')->nullable();
             
             $table->timestamps();
+
+            $table->foreign('giro_id')->references('id')->on('giros')->onDelete("cascade");
+            $table->foreign('estado_id')->references('id')->on('estados')->onDelete("cascade");
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete("cascade");
         });
     }
 

@@ -29,6 +29,22 @@ Route::resource('/empresas', 'EmpresaController')->names('admin.empresas');
 
 Route::resource('/vacantes', 'VacanteController')->names('admin.vacantes');
 
+Route::resource('/niveles', 'NiveleController')->names('admin.niveles');
+
+Route::resource('/carreras', 'CarreraController');
+
+Route::resource('/generaciones', 'GeneracioneController');
+
+Route::resource('/estados', 'EstadoController');
+
+Route::resource('/areas', 'AreaController');
+
+Route::resource('/giros', 'GiroController');
+
+Route::resource('/actividades', 'ActividadeController');
+
+Route::resource('/areas-vacantes', 'AreasVacanteController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'WelcomeController@index')->name('welcome');

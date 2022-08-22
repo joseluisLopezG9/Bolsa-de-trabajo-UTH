@@ -271,6 +271,11 @@ return [
                     'text' => '-- Usuario y contraseña',
                     'route' => 'admin.datosAcceso',
                     'can' => 'admin.egresados.edit'
+                ],
+                [   
+                    'text' => '-- Niveles académicos',
+                    'url' => 'niveles',
+                    'can' => 'admin.niveles.index'
                 ]
             ]
         ],
