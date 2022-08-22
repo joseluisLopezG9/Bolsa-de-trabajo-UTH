@@ -19,12 +19,12 @@
                             </span>
 
                              <div class="float-right">
-								<form action="">
+								<form action="{{route('admin.egresados.index')}}" method="get">
 									<div class="form row">
-										<div class="col-sm-8">
-											<input type="text" class="form-control" name="texto">
+										<div class="col-sm-11">
+											<input type="text" class="form-control" name="texto" placeholder="Matrícula o Folio" value="{{$texto}}">
 										</div>
-										<div class="col-auto">
+										<div class="col-auto my-1">
 											<input type="submit" class="btn btn-outline-primary" value="Buscar">
 										</div>
 									</div>
@@ -56,6 +56,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if(count($egresados)<=0)
+                                        <tr>
+                                            <td colspan="8">No hay resultados</td>
+                                        </tr>
+                                    @else
                                     @foreach ($egresados as $egresado)
                                         <tr>
                                             <td>{{ ++$i }}</td>
@@ -63,7 +68,7 @@
 											<td>{{ $egresado->nombre }}</td>
 											<td>{{ $egresado->apellidoPaterno }}</td>
 											<td>{{ $egresado->apellidoMaterno }}</td>
-											<td>{{ $egresado->carrera_id }}</td>
+											<td>{{ $egresado->carrera->nombre }}</td>
 											<td>{{ $egresado->matricula }}</td>
 											<td>{{ $egresado->folio }}</td>
 
@@ -78,6 +83,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

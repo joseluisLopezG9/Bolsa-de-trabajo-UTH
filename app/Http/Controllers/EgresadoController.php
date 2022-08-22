@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Egresado;
+use App\Models\Nivele;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class EgresadoController
@@ -16,12 +18,17 @@ class EgresadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $egresados = Egresado::paginate();
+        $texto = trim($request->get('texto'));
+        $egresados = DB::table('egresados')
+                    ->select('id','nombre','apellidoPaterno','apellidoMaterno','matricula','folio')
+                    ->where('matricula','LIKE','%'.$texto.'%')
+                    ->orWhere('folio','LIKE','%'.$texto.'%')
+                    ->orderBy('folio','asc')
+                    ->paginate(10);
 
-        return view('egresado.index', compact('egresados'))
-            ->with('i', (request()->input('page', 1) - 1) * $egresados->perPage());
+        return view('egresado.index', compact('egresados','texto'));
     }
 
     /**
@@ -32,7 +39,8 @@ class EgresadoController extends Controller
     public function create()
     {
         $egresado = new Egresado();
-        return view('egresado.create', compact('egresado'));
+        $niveles = Nivele::pluck('nombre','id');
+        return view('egresado.create', compact('egresado','niveles'));
     }
 
     /**

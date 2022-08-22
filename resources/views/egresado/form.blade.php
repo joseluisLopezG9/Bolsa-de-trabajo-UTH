@@ -17,8 +17,8 @@
             {!! $errors->first('apellidoMaterno', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nivel_id') }}
-            {{ Form::text('nivel_id', $egresado->nivel_id, ['class' => 'form-control' . ($errors->has('nivel_id') ? ' is-invalid' : ''), 'placeholder' => 'Nivel Id']) }}
+            {{ Form::label('nivel académico') }}
+            {{ Form::select('nivel_id', $niveles, $egresado->nivel_id, ['class' => 'form-control' . ($errors->has('nivel_id') ? ' is-invalid' : ''), 'placeholder' => 'Nivel Académico']) }}
             {!! $errors->first('nivel_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
