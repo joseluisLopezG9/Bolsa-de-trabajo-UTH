@@ -9,6 +9,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
+        <button type="submit" class="btn btn-outline-primary">Aceptar</button>
     </div>
 </div>

@@ -6,6 +6,10 @@
     {{ $egresado->name ?? 'Show Egresado' }}
 @endsection
 
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
+
 @section('content')
     <section class="content container-fluid">
         <div class="row">
@@ -16,7 +20,7 @@
                             <span class="card-title"><h5>Mostrar Egresado</h5></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('egresados.index') }}"> Back</a>
+                            <a class="btn btn-outline-primary" href="{{ route('admin.egresados.index') }}"> Regresar</a>
                         </div>
                     </div>
 
@@ -27,32 +31,32 @@
                             {{ $egresado->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellidopaterno:</strong>
+                            <strong>Apellido Paterno:</strong>
                             {{ $egresado->apellidoPaterno }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellidomaterno:</strong>
+                            <strong>Apellido Materno:</strong>
                             {{ $egresado->apellidoMaterno }}
                         </div>
                         <div class="form-group">
-                            <strong>Nivel Id:</strong>
-                            {{ $egresado->nivel_id }}
+                            <strong>Nivel Académico:</strong>
+                            {{ $egresado->nivele->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Carrera Id:</strong>
-                            {{ $egresado->carrera_id }}
+                            <strong>Carrera:</strong>
+                            {{ $egresado->carrera->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Matricula:</strong>
+                            <strong>Matrícula:</strong>
                             {{ $egresado->matricula }}
                         </div>
                         <div class="form-group">
-                            <strong>Division:</strong>
+                            <strong>División/Clave de Carrera:</strong>
                             {{ $egresado->division }}
                         </div>
                         <div class="form-group">
-                            <strong>Generacion Id:</strong>
-                            {{ $egresado->generacion_id }}
+                            <strong>Generación:</strong>
+                            {{ $egresado->generacione->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Domicilio:</strong>
@@ -63,15 +67,15 @@
                             {{ $egresado->colonia }}
                         </div>
                         <div class="form-group">
-                            <strong>Estado Id:</strong>
-                            {{ $egresado->estado_id }}
+                            <strong>Estado:</strong>
+                            {{ $egresado->estado->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Municipio:</strong>
                             {{ $egresado->municipio }}
                         </div>
                         <div class="form-group">
-                            <strong>Telefono:</strong>
+                            <strong>Teléfono:</strong>
                             {{ $egresado->telefono }}
                         </div>
                         <div class="form-group">
@@ -79,7 +83,7 @@
                             {{ $egresado->celular }}
                         </div>
                         <div class="form-group">
-                            <strong>Email:</strong>
+                            <strong>E-mail:</strong>
                             {{ $egresado->email }}
                         </div>
                         <div class="form-group">
@@ -91,13 +95,14 @@
                             {{ $egresado->contraseña }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Alta:</strong>
+                            <strong>Fecha de Alta:</strong>
                             {{ $egresado->fecha_alta }}
                         </div>
                         <div class="form-group">
                             <strong>Vigencia:</strong>
                             {{ $egresado->vigencia }}
-                        </div>
+                        </div><br>
+                        <h6>Competencias laborales, conocimientos y habilidades</h6><br>
                         <div class="form-group">
                             <strong>N1:</strong>
                             {{ $egresado->n1 }}
@@ -139,11 +144,11 @@
                             {{ $egresado->n10 }}
                         </div>
                         <div class="form-group">
-                            <strong>Area Id:</strong>
-                            {{ $egresado->area_id }}
+                            <strong>Area de Especialización:</strong>
+                            {{ $egresado->area->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Cv:</strong>
+                            <strong>CV:</strong>
                             {{ $egresado->cv }}
                         </div>
                         <div class="form-group">

@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Crear generacion')
 
 @section('template_title')
     Create Generacione
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <section class="content container-fluid">
@@ -13,10 +19,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Generacione</span>
+                        <span class="card-title"><h5>Nueva Generación</h5></span>
+                        <div class="float-right">
+                            <a class="btn btn-outline-primary" href="{{ route('admin.generaciones.index') }}"> Regresar</a>
+                        </div>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('generaciones.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.generaciones.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('generacione.form')

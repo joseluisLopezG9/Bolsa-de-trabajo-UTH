@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empresa;
+use App\Models\Giro;
+use App\Models\Estado;
+use App\Models\Actividade;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,11 @@ class EmpresaController extends Controller
     public function create()
     {
         $empresa = new Empresa();
-        return view('empresa.create', compact('empresa'));
+        $giros = Giro::pluck('descripcion','id');
+        $estados = Estado::pluck('nombre','id');
+        $actividades = Actividade::pluck('nombre','id');
+
+        return view('empresa.create', compact('empresa','giros','estados','actividades'));
     }
 
     /**
@@ -47,8 +54,8 @@ class EmpresaController extends Controller
 
         $empresa = Empresa::create($request->all());
 
-        return redirect()->route('empresas.index')
-            ->with('success', 'Empresa created successfully.');
+        return redirect()->route('admin.empresas.index')
+            ->with('success', 'Empresa creada');
     }
 
     /**
@@ -73,8 +80,11 @@ class EmpresaController extends Controller
     public function edit($id)
     {
         $empresa = Empresa::find($id);
+        $giros = Giro::pluck('descripcion','id');
+        $estados = Estado::pluck('nombre','id');
+        $actividades = Actividade::pluck('nombre','id');
 
-        return view('empresa.edit', compact('empresa'));
+        return view('empresa.edit', compact('empresa','giros','estados','actividades'));
     }
 
     /**
@@ -90,8 +100,8 @@ class EmpresaController extends Controller
 
         $empresa->update($request->all());
 
-        return redirect()->route('empresas.index')
-            ->with('success', 'Empresa updated successfully');
+        return redirect()->route('admin.empresas.index')
+            ->with('success', 'Empresa actualizada');
     }
 
     /**
@@ -103,7 +113,7 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id)->delete();
 
-        return redirect()->route('empresas.index')
-            ->with('success', 'Empresa deleted successfully');
+        return redirect()->route('admin.empresas.index')
+            ->with('success', 'Empresa eliminada');
     }
 }

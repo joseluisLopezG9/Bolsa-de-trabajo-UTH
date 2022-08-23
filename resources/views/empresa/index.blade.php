@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Consultar empresa')
 
 @section('template_title')
     Empresa
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <div class="container-fluid">
@@ -13,13 +19,10 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Empresa') }}
+                                <h5>{{ __('Empresas') }}</h5>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('empresas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
                               </div>
                         </div>
                     </div>
@@ -30,6 +33,21 @@
                     @endif
 
                     <div class="card-body">
+                    <form>
+                        <div class="form-row align-items-center">
+                            <div class="col-sm-4">
+                                <label for="nombre">Nombre de la Empresa</label>
+                                    <select id="nombre" class="form-control">
+                                        <option selected>Elija una Opción</option>
+                                        <option value="..">...</option>
+                                    </select>
+                            </div><br>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-outline-primary my-1">Consultar</button>
+                            </div>
+                        </div>
+                    </form><br>
+                    <h6>Nota: Si elimina una empresa, los registros que tengan relación con esta se eliminarán también.</h6>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
@@ -37,12 +55,10 @@
                                         <th>No</th>
                                         
 										<th>Nombre</th>
-										<th>Domicilio</th>
-										<th>Telefono</th>
-										<th>Giro Id</th>
-										<th>Estado Id</th>
-										<th>Ciudad</th>
-										<th>Actividad Id</th>
+										<th>Teléfono</th>
+										<th>Giro</th>
+										<th>Estado</th>
+										<th>Actividad</th>
 										<th>Observaciones</th>
 
                                         <th></th>
@@ -54,21 +70,18 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $empresa->nombre }}</td>
-											<td>{{ $empresa->domicilio }}</td>
 											<td>{{ $empresa->telefono }}</td>
-											<td>{{ $empresa->giro_id }}</td>
-											<td>{{ $empresa->estado_id }}</td>
-											<td>{{ $empresa->ciudad }}</td>
-											<td>{{ $empresa->actividad_id }}</td>
+											<td>{{ $empresa->giro->descripcion }}</td>
+											<td>{{ $empresa->estado->nombre }}</td>
+											<td>{{ $empresa->actividade->nombre }}</td>
 											<td>{{ $empresa->observaciones }}</td>
 
                                             <td>
-                                                <form action="{{ route('empresas.destroy',$empresa->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="" method="">
+                                                    <a class="btn btn-sm btn-outline-primary " href=""><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href=""><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

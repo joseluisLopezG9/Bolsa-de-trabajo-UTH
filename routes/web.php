@@ -52,13 +52,3 @@ Route::get('/welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/egresados/vigentes', 'EgresadoController@verVigentes')->name('admin.egresadosVigentes');
 
 Route::get('/egresado/datosAcceso', 'EgresadoController@datosAcceso')->name('admin.datosAcceso');
-
-Route::get('/empresa/nuevaActividad', 'EmpresaController@NvaActividad')->name('admin.nvaActividad');
-
-
-
-
-
-
-
-

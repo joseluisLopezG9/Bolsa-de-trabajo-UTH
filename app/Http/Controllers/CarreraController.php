@@ -47,8 +47,8 @@ class CarreraController extends Controller
 
         $carrera = Carrera::create($request->all());
 
-        return redirect()->route('carreras.index')
-            ->with('success', 'Carrera created successfully.');
+        return redirect()->route('admin.carreras.index')
+            ->with('success', 'Carrera creada');
     }
 
     /**
@@ -90,8 +90,8 @@ class CarreraController extends Controller
 
         $carrera->update($request->all());
 
-        return redirect()->route('carreras.index')
-            ->with('success', 'Carrera updated successfully');
+        return redirect()->route('admin.carreras.index')
+            ->with('success', 'Carrera actualizada');
     }
 
     /**
@@ -103,7 +103,7 @@ class CarreraController extends Controller
     {
         $carrera = Carrera::find($id)->delete();
 
-        return redirect()->route('carreras.index')
-            ->with('success', 'Carrera deleted successfully');
+        return redirect()->route('admin.carreras.index')
+            ->with('success', 'Carrera eliminada');
     }
 }

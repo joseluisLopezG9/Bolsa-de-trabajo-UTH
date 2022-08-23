@@ -6,6 +6,10 @@
     Create Egresado
 @endsection
 
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
+
 @section('content')
     <section class="content container-fluid">
         <div class="row">

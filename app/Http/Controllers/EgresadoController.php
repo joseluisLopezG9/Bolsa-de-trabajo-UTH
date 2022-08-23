@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Egresado;
 use App\Models\Nivele;
+use App\Models\Carrera;
+use App\Models\Generacione;
+use App\Models\Estado;
+use App\Models\Area;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class EgresadoController
@@ -18,17 +21,12 @@ class EgresadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $texto = trim($request->get('texto'));
-        $egresados = DB::table('egresados')
-                    ->select('id','nombre','apellidoPaterno','apellidoMaterno','matricula','folio')
-                    ->where('matricula','LIKE','%'.$texto.'%')
-                    ->orWhere('folio','LIKE','%'.$texto.'%')
-                    ->orderBy('folio','asc')
-                    ->paginate(10);
+        $egresados = Egresado::paginate();
 
-        return view('egresado.index', compact('egresados','texto'));
+        return view('egresado.index', compact('egresados'))
+        ->with('i', (request()->input('page', 1) - 1) * $egresados->perPage());;
     }
 
     /**
@@ -40,7 +38,12 @@ class EgresadoController extends Controller
     {
         $egresado = new Egresado();
         $niveles = Nivele::pluck('nombre','id');
-        return view('egresado.create', compact('egresado','niveles'));
+        $carreras = Carrera::pluck('nombre','id');
+        $generaciones = Generacione::pluck('descripcion','id');
+        $estados = Estado::pluck('nombre','id');
+        $areas = Area::pluck('nombre','id');
+
+        return view('egresado.create', compact('egresado','niveles','carreras','generaciones','estados','areas'));
     }
 
     /**
@@ -55,7 +58,7 @@ class EgresadoController extends Controller
 
         $egresado = Egresado::create($request->all());
 
-        return redirect()->route('egresados.index')
+        return redirect()->route('admin.egresados.index')
             ->with('success', 'Egresado creado');
     }
 
@@ -81,8 +84,13 @@ class EgresadoController extends Controller
     public function edit($id)
     {
         $egresado = Egresado::find($id);
+        $niveles = Nivele::pluck('nombre','id');
+        $carreras = Carrera::pluck('nombre','id');
+        $generaciones = Generacione::pluck('descripcion','id');
+        $estados = Estado::pluck('nombre','id');
+        $areas = Area::pluck('nombre','id');
 
-        return view('egresado.edit', compact('egresado'));
+        return view('egresado.edit', compact('egresado','niveles','carreras','generaciones','estados','areas'));
     }
 
     /**
@@ -98,7 +106,7 @@ class EgresadoController extends Controller
 
         $egresado->update($request->all());
 
-        return redirect()->route('egresados.index')
+        return redirect()->route('admin.egresados.index')
             ->with('success', 'Egresado actualizado');
     }
 
@@ -111,7 +119,24 @@ class EgresadoController extends Controller
     {
         $egresado = Egresado::find($id)->delete();
 
-        return redirect()->route('egresados.index')
+        return redirect()->route('admin.egresados.index')
             ->with('success', 'Egresado eliminado');
+    }
+
+    public function verVigentes()
+    {
+        return view('egresado.vigentes');
+    }
+
+    public function NOvigentes($id)
+    {
+        $egresado = Egresado::find($id);
+
+        return view('egresado.NOvigentes', compact('egresado'));
+    }
+
+    public function datosAcceso()
+    {
+        return view('egresado.datos_acceso');
     }
 }

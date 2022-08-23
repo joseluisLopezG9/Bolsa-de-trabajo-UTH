@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Mostrar empresa')
 
 @section('template_title')
     {{ $empresa->name ?? 'Show Empresa' }}
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <section class="content container-fluid">
@@ -11,10 +17,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Empresa</span>
+                            <span class="card-title"><h5>Mostrar Empresa</h5></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('empresas.index') }}"> Back</a>
+                            <a class="btn btn-outline-primary" href="{{ route('admin.empresas.index') }}"> Regresar</a>
                         </div>
                     </div>
 
@@ -33,20 +39,20 @@
                             {{ $empresa->telefono }}
                         </div>
                         <div class="form-group">
-                            <strong>Giro Id:</strong>
-                            {{ $empresa->giro_id }}
+                            <strong>Giro:</strong>
+                            {{ $empresa->giro->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Estado Id:</strong>
-                            {{ $empresa->estado_id }}
+                            <strong>Estado:</strong>
+                            {{ $empresa->estado->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Ciudad:</strong>
                             {{ $empresa->ciudad }}
                         </div>
                         <div class="form-group">
-                            <strong>Actividad Id:</strong>
-                            {{ $empresa->actividad_id }}
+                            <strong>Actividad:</strong>
+                            {{ $empresa->actividade->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Observaciones:</strong>

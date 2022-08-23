@@ -47,8 +47,8 @@ class AreasVacanteController extends Controller
 
         $areasVacante = AreasVacante::create($request->all());
 
-        return redirect()->route('areas-vacantes.index')
-            ->with('success', 'AreasVacante created successfully.');
+        return redirect()->route('admin.areas-vacantes.index')
+            ->with('success', 'Área creada');
     }
 
     /**
@@ -90,8 +90,8 @@ class AreasVacanteController extends Controller
 
         $areasVacante->update($request->all());
 
-        return redirect()->route('areas-vacantes.index')
-            ->with('success', 'AreasVacante updated successfully');
+        return redirect()->route('admin.areas-vacantes.index')
+            ->with('success', 'Área actualizada');
     }
 
     /**
@@ -103,7 +103,7 @@ class AreasVacanteController extends Controller
     {
         $areasVacante = AreasVacante::find($id)->delete();
 
-        return redirect()->route('areas-vacantes.index')
-            ->with('success', 'AreasVacante deleted successfully');
+        return redirect()->route('admin.areas-vacantes.index')
+            ->with('success', 'Área eliminada');
     }
 }

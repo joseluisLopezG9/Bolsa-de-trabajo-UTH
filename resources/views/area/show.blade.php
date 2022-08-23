@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Mostrar area')
 
 @section('template_title')
     {{ $area->name ?? 'Show Area' }}
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <section class="content container-fluid">
@@ -11,18 +17,18 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Area</span>
+                            <span class="card-title"><h5>Mostrar Área</h5></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('areas.index') }}"> Back</a>
+                            <a class="btn btn-outline-primary" href="{{ route('admin.areas.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Carrera Id:</strong>
-                            {{ $area->carrera_id }}
+                            <strong>Carrera:</strong>
+                            {{ $area->carrera->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>

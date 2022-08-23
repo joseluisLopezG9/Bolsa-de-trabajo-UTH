@@ -6,6 +6,10 @@
     {{ $nivele->name ?? 'Show Nivele' }}
 @endsection
 
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
+
 @section('content')
     <section class="content container-fluid">
         <div class="row">
@@ -16,7 +20,7 @@
                             <span class="card-title"><h5>Mostrar Nivel Académico</h5></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('admin.niveles.index') }}">Regresar</a>
+                            <a class="btn btn-outline-primary" href="{{ route('admin.niveles.index') }}">Regresar</a>
                         </div>
                     </div>
 

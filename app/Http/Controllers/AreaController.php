@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Area;
+use App\Models\Carrera;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class AreaController extends Controller
     public function create()
     {
         $area = new Area();
-        return view('area.create', compact('area'));
+        $carreras = Carrera::pluck('nombre','id');
+        return view('area.create', compact('area','carreras'));
     }
 
     /**
@@ -47,8 +49,8 @@ class AreaController extends Controller
 
         $area = Area::create($request->all());
 
-        return redirect()->route('areas.index')
-            ->with('success', 'Area created successfully.');
+        return redirect()->route('admin.areas.index')
+            ->with('success', 'Área creada');
     }
 
     /**
@@ -73,8 +75,9 @@ class AreaController extends Controller
     public function edit($id)
     {
         $area = Area::find($id);
+        $carreras = Carrera::pluck('nombre','id');
 
-        return view('area.edit', compact('area'));
+        return view('area.edit', compact('area','carreras'));
     }
 
     /**
@@ -90,8 +93,8 @@ class AreaController extends Controller
 
         $area->update($request->all());
 
-        return redirect()->route('areas.index')
-            ->with('success', 'Area updated successfully');
+        return redirect()->route('admin.areas.index')
+            ->with('success', 'Área actualizada');
     }
 
     /**
@@ -103,7 +106,7 @@ class AreaController extends Controller
     {
         $area = Area::find($id)->delete();
 
-        return redirect()->route('areas.index')
-            ->with('success', 'Area deleted successfully');
+        return redirect()->route('admin.areas.index')
+            ->with('success', 'Área eliminada');
     }
 }

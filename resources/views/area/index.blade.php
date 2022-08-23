@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Consultar area')
 
 @section('template_title')
     Area
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <div class="container-fluid">
@@ -13,12 +19,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Area') }}
+                                <h5>{{ __('Áreas de Especialización') }}</h5>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('areas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <a href="{{ route('admin.areas.create') }}" class="btn btn-outline-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Agregar') }}
                                 </a>
                               </div>
                         </div>
@@ -30,13 +36,14 @@
                     @endif
 
                     <div class="card-body">
+                        <h6>Nota: Si elimina un área, los registros que tengan relación con esta se eliminarán también.</h6>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Carrera Id</th>
+										<th>Carrera</th>
 										<th>Nombre</th>
 
                                         <th></th>
@@ -47,16 +54,16 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $area->carrera_id }}</td>
+											<td>{{ $area->carrera->nombre }}</td>
 											<td>{{ $area->nombre }}</td>
 
                                             <td>
-                                                <form action="{{ route('areas.destroy',$area->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('areas.show',$area->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('areas.edit',$area->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.areas.destroy',$area->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('admin.areas.show',$area->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href="{{ route('admin.areas.edit',$area->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

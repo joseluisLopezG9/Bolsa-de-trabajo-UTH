@@ -47,8 +47,8 @@ class ActividadeController extends Controller
 
         $actividade = Actividade::create($request->all());
 
-        return redirect()->route('actividades.index')
-            ->with('success', 'Actividade created successfully.');
+        return redirect()->route('admin.actividades.index')
+            ->with('success', 'Actividad creada');
     }
 
     /**
@@ -90,8 +90,8 @@ class ActividadeController extends Controller
 
         $actividade->update($request->all());
 
-        return redirect()->route('actividades.index')
-            ->with('success', 'Actividade updated successfully');
+        return redirect()->route('admin.actividades.index')
+            ->with('success', 'Actividad actualizada');
     }
 
     /**
@@ -103,7 +103,7 @@ class ActividadeController extends Controller
     {
         $actividade = Actividade::find($id)->delete();
 
-        return redirect()->route('actividades.index')
-            ->with('success', 'Actividade deleted successfully');
+        return redirect()->route('admin.actividades.index')
+            ->with('success', 'Actividad eliminada');
     }
 }

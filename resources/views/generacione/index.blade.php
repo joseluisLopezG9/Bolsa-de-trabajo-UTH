@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Consultar generacion')
 
 @section('template_title')
     Generacione
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <div class="container-fluid">
@@ -13,12 +19,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Generacione') }}
+                                <h5>{{ __('Generaciones') }}</h5>
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('generaciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <a href="{{ route('admin.generaciones.create') }}" class="btn btn-outline-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Agregar') }}
                                 </a>
                               </div>
                         </div>
@@ -30,13 +36,14 @@
                     @endif
 
                     <div class="card-body">
+                    Nota: Si elimina una generación, los registros que tengan relación con esta se eliminarán también.
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Descripcion</th>
+										<th>Descripción</th>
 
                                         <th></th>
                                     </tr>
@@ -49,12 +56,12 @@
 											<td>{{ $generacione->descripcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('generaciones.destroy',$generacione->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('generaciones.show',$generacione->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('generaciones.edit',$generacione->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('admin.generaciones.destroy',$generacione->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('admin.generaciones.show',$generacione->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href="{{ route('admin.generaciones.edit',$generacione->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

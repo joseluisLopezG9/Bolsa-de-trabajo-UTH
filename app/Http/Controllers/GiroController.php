@@ -47,8 +47,8 @@ class GiroController extends Controller
 
         $giro = Giro::create($request->all());
 
-        return redirect()->route('giros.index')
-            ->with('success', 'Giro created successfully.');
+        return redirect()->route('admin.giros.index')
+            ->with('success', 'Giro creado');
     }
 
     /**
@@ -90,8 +90,8 @@ class GiroController extends Controller
 
         $giro->update($request->all());
 
-        return redirect()->route('giros.index')
-            ->with('success', 'Giro updated successfully');
+        return redirect()->route('admin.giros.index')
+            ->with('success', 'Giro actualizado');
     }
 
     /**
@@ -103,7 +103,7 @@ class GiroController extends Controller
     {
         $giro = Giro::find($id)->delete();
 
-        return redirect()->route('giros.index')
-            ->with('success', 'Giro deleted successfully');
+        return redirect()->route('admin.giros.index')
+            ->with('success', 'Giro eliminado');
     }
 }

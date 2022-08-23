@@ -47,8 +47,8 @@ class GeneracioneController extends Controller
 
         $generacione = Generacione::create($request->all());
 
-        return redirect()->route('generaciones.index')
-            ->with('success', 'Generacione created successfully.');
+        return redirect()->route('admin.generaciones.index')
+            ->with('success', 'Generación creada');
     }
 
     /**
@@ -90,8 +90,8 @@ class GeneracioneController extends Controller
 
         $generacione->update($request->all());
 
-        return redirect()->route('generaciones.index')
-            ->with('success', 'Generacione updated successfully');
+        return redirect()->route('admin.generaciones.index')
+            ->with('success', 'Generación actualizada');
     }
 
     /**
@@ -103,7 +103,7 @@ class GeneracioneController extends Controller
     {
         $generacione = Generacione::find($id)->delete();
 
-        return redirect()->route('generaciones.index')
-            ->with('success', 'Generacione deleted successfully');
+        return redirect()->route('admin.generaciones.index')
+            ->with('success', 'Generación eliminada');
     }
 }

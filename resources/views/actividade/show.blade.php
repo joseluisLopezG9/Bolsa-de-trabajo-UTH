@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Mostrar actividad')
 
 @section('template_title')
-    {{ $actividade->name ?? 'Show Actividade' }}
+    {{ $actividade->name ?? 'Mostrar Actividad' }}
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <section class="content container-fluid">
@@ -11,10 +17,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Actividade</span>
+                            <span class="card-title"><h5>Mostrar Actividad</h5></span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('actividades.index') }}"> Back</a>
+                            <a class="btn btn-outline-primary" href="{{ route('admin.actividades.index') }}"> Regresar</a>
                         </div>
                     </div>
 

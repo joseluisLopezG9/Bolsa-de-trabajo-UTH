@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Consultar vacante')
 
 @section('template_title')
     Vacante
 @endsection
+
+@section('content_header')
+    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
+@stop
 
 @section('content')
     <div class="container-fluid">
@@ -13,14 +19,9 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Vacante') }}
+                                <h5>{{ __('Vacantes') }}</h5>
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('vacantes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -30,33 +31,34 @@
                     @endif
 
                     <div class="card-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="folio">Folio de Vacante</label>
+                                        <input type="text" class="form-control" id="folio">
+                                </div>
+                            <div class="form-group col-md-6">
+                                <label for="carrera">Nivel de Estudios</label>
+                                    <select id="carrera" class="form-control">
+                                        <option selected>Elija una Opción</option>
+                                        <option value="tsu">TSU</option>
+                                        <option value="ing">Ingeniería</option>
+                                        <option value="mtria">Maestría</option>
+                                    </select>
+                            </div>
+                        </form>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Empresa Id</th>
-										<th>Puesto</th>
-										<th>Nivel Id</th>
-										<th>Num Candidatos</th>
-										<th>Num Vacantes</th>
-										<th>Edad</th>
-										<th>Genero</th>
-										<th>Idioma</th>
-										<th>Estado Civil</th>
-										<th>Experiencia</th>
-										<th>Conocimientos</th>
-										<th>Habilidades</th>
+                                        <th>Folio</th>
+                                        <th>Puesto</th>
+										<th>Empresa</th>
+										<th>Nivel académico</th>
 										<th>Sueldo</th>
 										<th>Horario</th>
-										<th>Entrevistador</th>
-										<th>Contacto</th>
-										<th>Confidencial</th>
-										<th>Otros</th>
-										<th>Beneficios</th>
-										<th>Folio</th>
-										<th>Area Id</th>
 
                                         <th></th>
                                     </tr>
@@ -66,35 +68,20 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $vacante->empresa_id }}</td>
+                                            <td>{{ $vacante->folio }}</td>
 											<td>{{ $vacante->puesto }}</td>
-											<td>{{ $vacante->nivel_id }}</td>
-											<td>{{ $vacante->num_candidatos }}</td>
-											<td>{{ $vacante->num_vacantes }}</td>
-											<td>{{ $vacante->edad }}</td>
-											<td>{{ $vacante->genero }}</td>
-											<td>{{ $vacante->idioma }}</td>
-											<td>{{ $vacante->estado_civil }}</td>
-											<td>{{ $vacante->experiencia }}</td>
-											<td>{{ $vacante->conocimientos }}</td>
-											<td>{{ $vacante->habilidades }}</td>
+                                            <td>{{ $vacante->empresa->nombre }}</td>
+											<td>{{ $vacante->nivele->nombre }}</td>
 											<td>{{ $vacante->sueldo }}</td>
 											<td>{{ $vacante->horario }}</td>
-											<td>{{ $vacante->entrevistador }}</td>
-											<td>{{ $vacante->contacto }}</td>
-											<td>{{ $vacante->confidencial }}</td>
-											<td>{{ $vacante->otros }}</td>
-											<td>{{ $vacante->beneficios }}</td>
-											<td>{{ $vacante->folio }}</td>
-											<td>{{ $vacante->area_id }}</td>
 
                                             <td>
-                                                <form action="{{ route('vacantes.destroy',$vacante->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('vacantes.show',$vacante->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('vacantes.edit',$vacante->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="" method="">
+                                                    <a class="btn btn-sm btn-outline-primary " href=""><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href=""><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

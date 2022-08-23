@@ -276,6 +276,21 @@ return [
                     'text' => '-- Niveles académicos',
                     'url' => 'niveles',
                     'can' => 'admin.niveles.index'
+                ],
+                [   
+                    'text' => '-- Carreras',
+                    'url' => 'carreras',
+                    'can' => 'admin.carreras.index'
+                ],
+                [   
+                    'text' => '-- Generaciones',
+                    'url' => 'generaciones',
+                    'can' => 'admin.generaciones.index'
+                ],
+                [   
+                    'text' => '-- Áreas de Especialización',
+                    'url' => 'areas',
+                    'can' => 'admin.areas.index'
                 ]
             ]
         ],
@@ -296,9 +311,14 @@ return [
                     'can' => 'admin.empresas.index'
                 ],
                 [
-                    'text' => '-- Nueva actividad',
-                    'route' => 'admin.nvaActividad',
-                    'can' => 'admin.empresas.edit'
+                    'text' => '-- Giros',
+                    'url' => 'giros',
+                    'can' => 'admin.giros.index'
+                ],
+                [
+                    'text' => '-- Actividades de Empresa',
+                    'url' => 'actividades',
+                    'can' => 'admin.actividades.index'
                 ]
             ]
         ],
@@ -316,6 +336,11 @@ return [
                     'text' => '-- Consultar vacante',
                     'url' => 'vacantes',
                     'can' => 'admin.vacantes.index'
+                ],
+                [
+                    'text' => '-- Áreas de especialización',
+                    'url' => 'areas-vacantes',
+                    'can' => 'admin.areas-vacantes.index'
                 ]
             ]
         ],

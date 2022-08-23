@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vacante;
+use App\Models\Empresa;
+use App\Models\Nivele;
+use App\Models\AreasVacante;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,11 @@ class VacanteController extends Controller
     public function create()
     {
         $vacante = new Vacante();
-        return view('vacante.create', compact('vacante'));
+        $empresas = Empresa::pluck('nombre','id');
+        $niveles = Nivele::pluck('nombre','id');
+        $areas_vacantes = AreasVacante::pluck('nombre','id');
+        
+        return view('vacante.create', compact('vacante','empresas','niveles','areas_vacantes'));
     }
 
     /**
@@ -47,8 +54,8 @@ class VacanteController extends Controller
 
         $vacante = Vacante::create($request->all());
 
-        return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante created successfully.');
+        return redirect()->route('admin.vacantes.index')
+            ->with('success', 'Vacante creada');
     }
 
     /**
@@ -73,8 +80,11 @@ class VacanteController extends Controller
     public function edit($id)
     {
         $vacante = Vacante::find($id);
+        $empresas = Empresa::pluck('nombre','id');
+        $niveles = Nivele::pluck('nombre','id');
+        $areas_vacantes = AreasVacante::pluck('nombre','id');
 
-        return view('vacante.edit', compact('vacante'));
+        return view('vacante.edit', compact('vacante','empresas','niveles','areas_vacantes'));
     }
 
     /**
@@ -90,8 +100,8 @@ class VacanteController extends Controller
 
         $vacante->update($request->all());
 
-        return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante updated successfully');
+        return redirect()->route('admin.vacantes.index')
+            ->with('success', 'Vacante actualizada');
     }
 
     /**
@@ -103,7 +113,7 @@ class VacanteController extends Controller
     {
         $vacante = Vacante::find($id)->delete();
 
-        return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante deleted successfully');
+        return redirect()->route('admin.vacantes.index')
+            ->with('success', 'Vacante eliminada');
     }
 }
