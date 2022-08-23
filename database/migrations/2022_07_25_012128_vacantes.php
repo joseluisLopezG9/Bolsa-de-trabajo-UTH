@@ -21,14 +21,14 @@ class Vacantes extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('empresa_id')->unsigned();
             $table->string('puesto');
-            $table->enum("nivel", ["TSU", "Ingeniería"]);
+            $table->bigInteger('nivel_id')->unsigned();
             $table->integer('num_candidatos');
             $table->integer('num_vacantes');
             $table->string('edad');
             $table->string('genero');
             $table->string('idioma');
             $table->string('estado_civil');
-            $table->string('exp');
+            $table->string('experiencia');
             $table->string('conocimientos');
             $table->string('habilidades');
             $table->double('sueldo', 8, 2);
@@ -36,12 +36,15 @@ class Vacantes extends Migration
             $table->string('entrevistador');
             $table->string('contacto');
             $table->string('confidencial');
-            $table->string('otros');
+            $table->string('otros')->nullable();
             $table->string('beneficios');
             $table->string('folio');
+            $table->bigInteger('area_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete("cascade");
+            $table->foreign('nivel_id')->references('id')->on('niveles')->onDelete("cascade");
+            $table->foreign('area_id')->references('id')->on('areas_vacantes')->onDelete("cascade");
         });
     }
 

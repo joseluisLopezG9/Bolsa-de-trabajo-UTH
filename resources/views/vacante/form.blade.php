@@ -2,19 +2,19 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('Empresa') }}
-            {{ Form::select('empresa_id', $empresas, $vacante->empresa_id, ['class' => 'form-control' . ($errors->has('empresa_id') ? ' is-invalid' : ''), 'placeholder' => 'Empresa']) }}
+            {{ Form::label('empresa_id') }}
+            {{ Form::text('empresa_id', $vacante->empresa_id, ['class' => 'form-control' . ($errors->has('empresa_id') ? ' is-invalid' : ''), 'placeholder' => 'Empresa Id']) }}
             {!! $errors->first('empresa_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Puesto') }}
+            {{ Form::label('puesto') }}
             {{ Form::text('puesto', $vacante->puesto, ['class' => 'form-control' . ($errors->has('puesto') ? ' is-invalid' : ''), 'placeholder' => 'Puesto']) }}
             {!! $errors->first('puesto', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Nivel') }}
-            {{ Form::text('nivel', $vacante->nivel, ['class' => 'form-control' . ($errors->has('nivel') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
-            {!! $errors->first('nivel', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('nivel_id') }}
+            {{ Form::text('nivel_id', $vacante->nivel_id, ['class' => 'form-control' . ($errors->has('nivel_id') ? ' is-invalid' : ''), 'placeholder' => 'Nivel Id']) }}
+            {!! $errors->first('nivel_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('num_candidatos') }}
@@ -47,9 +47,9 @@
             {!! $errors->first('estado_civil', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('exp') }}
-            {{ Form::text('exp', $vacante->exp, ['class' => 'form-control' . ($errors->has('exp') ? ' is-invalid' : ''), 'placeholder' => 'Exp']) }}
-            {!! $errors->first('exp', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('experiencia') }}
+            {{ Form::text('experiencia', $vacante->experiencia, ['class' => 'form-control' . ($errors->has('experiencia') ? ' is-invalid' : ''), 'placeholder' => 'Experiencia']) }}
+            {!! $errors->first('experiencia', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('conocimientos') }}
@@ -100,6 +100,11 @@
             {{ Form::label('folio') }}
             {{ Form::text('folio', $vacante->folio, ['class' => 'form-control' . ($errors->has('folio') ? ' is-invalid' : ''), 'placeholder' => 'Folio']) }}
             {!! $errors->first('folio', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('area_id') }}
+            {{ Form::text('area_id', $vacante->area_id, ['class' => 'form-control' . ($errors->has('area_id') ? ' is-invalid' : ''), 'placeholder' => 'Area Id']) }}
+            {!! $errors->first('area_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

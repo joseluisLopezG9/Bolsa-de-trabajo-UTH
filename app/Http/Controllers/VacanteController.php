@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vacante;
-use App\Models\Empresa;
 use Illuminate\Http\Request;
 
 /**
@@ -33,9 +32,7 @@ class VacanteController extends Controller
     public function create()
     {
         $vacante = new Vacante();
-        $empresas = Empresa::pluck('nombre', 'id');
-
-        return view('vacante.create', compact('vacante','empresas'));
+        return view('vacante.create', compact('vacante'));
     }
 
     /**
@@ -51,7 +48,7 @@ class VacanteController extends Controller
         $vacante = Vacante::create($request->all());
 
         return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante creada exitosamente');
+            ->with('success', 'Vacante created successfully.');
     }
 
     /**
@@ -94,7 +91,7 @@ class VacanteController extends Controller
         $vacante->update($request->all());
 
         return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante actualizada exitosamente');
+            ->with('success', 'Vacante updated successfully');
     }
 
     /**
@@ -107,6 +104,6 @@ class VacanteController extends Controller
         $vacante = Vacante::find($id)->delete();
 
         return redirect()->route('vacantes.index')
-            ->with('success', 'Vacante eliminada exitosamente');
+            ->with('success', 'Vacante deleted successfully');
     }
 }

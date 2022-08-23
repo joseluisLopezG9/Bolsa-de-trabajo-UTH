@@ -1,6 +1,4 @@
-@extends('adminlte::page')
-
-@section('title', 'Nueva vacante')
+@extends('layouts.app')
 
 @section('template_title')
     Create Vacante
@@ -11,15 +9,14 @@
         <div class="row">
             <div class="col-md-12">
 
-            <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
                 @includeif('partials.errors')
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title"><h4>Nueva Vacante</h4></span>
+                        <span class="card-title">Create Vacante</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.vacantes.store') }}" role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('vacantes.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('vacante.form')
