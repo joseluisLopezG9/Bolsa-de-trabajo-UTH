@@ -1,31 +1,43 @@
-@extends('adminlte::page')
+@extends('adminlte::page')  
 
 @section('title', 'index')
 
-
 @section('content_header')
-<div class="info-box">
-            <span class="info-box-icon bg-success"><i class="far fa-envelope"></i></span>
-            <div class="info-box-content">
-            <span class="info-box-text">Usted tiene:</span>
-            <span class="info-box-number">| 30 mensajes sin leer |</span>
-</div>
-            <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
-            <div class="info-box-content">
-            <span class="info-box-text">Documentos sin subir</span>
-            <span class="info-box-number">| 14 |</span>
-            </div>
 
-            <span class="info-box-icon bg-success"><i class="far fa-calendar-alt"></i></span>
-            <div class="info-box-content">
-            <span class="info-box-text">Eventos pendientes</span>
-            <span class="info-box-number">| 7 |</span>
-            <span class="progress-description">
-            </span>
-            </div>
-</div>
 
+@role('Administrador')  
+
+
+<h4 style="color: green;font-size: 17px;">  Sesión iniciada como: ADMINISTRADOR  </h4>
 <br>
+<div class="info-box">
+    <span class="info-box-icon bg-success"><i class="far fa-envelope"></i></span>
+    <div class="info-box-content">
+    <span class="info-box-text">Usted tiene:</span>
+    <span class="info-box-number">| 30 mensajes sin leer |</span>
+</div>
+    <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
+    <div class="info-box-content">
+    <span class="info-box-text">Documentos sin subir</span>
+    <span class="info-box-number">| 14 |</span>
+    </div>
+
+    <span class="info-box-icon bg-success"><i class="far fa-calendar-alt"></i></span>
+    <div class="info-box-content">
+    <span class="info-box-text">Eventos pendientes</span>
+    <span class="info-box-number">| 7 |</span>
+    <span class="progress-description">
+    </span>
+    </div>
+</div>
+<br>
+
+@else
+<h4 style="color: green;font-size: 17px;"> Sesión iniciada como: OBSERVADOR  </h4>
+
+@endrole
+
+   
 <center><h3 style="color: green;font-size: 35px;"> Bolsa de trabajo institucional</h3></center>
 @stop
 
