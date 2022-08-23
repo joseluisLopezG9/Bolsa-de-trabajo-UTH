@@ -24,7 +24,7 @@
 
     <span class="info-box-icon bg-success"><i class="far fa-calendar-alt"></i></span>
     <div class="info-box-content">
-    <span class="info-box-text">Eventos pendientes</span>
+    <span class="info-box-text">Eventos pendientes </span>
     <span class="info-box-number">| 7 |</span>
     <span class="progress-description">
     </span>
