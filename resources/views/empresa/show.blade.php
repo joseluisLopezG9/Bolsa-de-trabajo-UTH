@@ -1,6 +1,4 @@
-@extends('adminlte::page')
-
-@section('title', 'Ver empresa')
+@extends('layouts.app')
 
 @section('template_title')
     {{ $empresa->name ?? 'Show Empresa' }}
@@ -13,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Mostrar Empresa</span>
+                            <span class="card-title">Show Empresa</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-success" href="{{ route('empresas.index') }}"> Regresar</a>
+                            <a class="btn btn-primary" href="{{ route('empresas.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -31,24 +29,24 @@
                             {{ $empresa->domicilio }}
                         </div>
                         <div class="form-group">
-                            <strong>Teléfono:</strong>
-                            {{ $empresa->tel }}
+                            <strong>Telefono:</strong>
+                            {{ $empresa->telefono }}
                         </div>
                         <div class="form-group">
-                            <strong>Giro de la empresa:</strong>
-                            {{ $empresa->giro }}
+                            <strong>Giro Id:</strong>
+                            {{ $empresa->giro_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $empresa->estado }}
+                            <strong>Estado Id:</strong>
+                            {{ $empresa->estado_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Población o Ciudad:</strong>
+                            <strong>Ciudad:</strong>
                             {{ $empresa->ciudad }}
                         </div>
                         <div class="form-group">
-                            <strong>Actividad de la empresa:</strong>
-                            {{ $empresa->actividad }}
+                            <strong>Actividad Id:</strong>
+                            {{ $empresa->actividad_id }}
                         </div>
                         <div class="form-group">
                             <strong>Observaciones:</strong>

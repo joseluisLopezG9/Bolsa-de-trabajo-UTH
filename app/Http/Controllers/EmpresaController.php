@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vacante;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 
@@ -34,10 +33,6 @@ class EmpresaController extends Controller
     {
         $empresa = new Empresa();
         return view('empresa.create', compact('empresa'));
-
-        $empresas = Empresa::pluck('nombre', 'id');
-
-        return view('vacante.create', compact('vacante','empresas'));
     }
 
     /**
@@ -80,8 +75,6 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id);
 
         return view('empresa.edit', compact('empresa'));
-
-
     }
 
     /**
@@ -112,14 +105,5 @@ class EmpresaController extends Controller
 
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa deleted successfully');
-    }
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function NvaActividad()
-    {
-        return view('empresa.nva_actividad');
     }
 }

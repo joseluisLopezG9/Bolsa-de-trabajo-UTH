@@ -1,11 +1,8 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
-@section('title', 'Consultar egresado')
-
-
-@section('content_header')
-    <center><h3 style="color: green;font-size: 30px;">Bolsa de Trabajo Institucional</h3></center>
-@stop
+@section('template_title')
+    Empresa
+@endsection
 
 @section('content')
     <div class="container-fluid">
@@ -16,8 +13,14 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Bienvenido (a)') }}
+                                {{ __('Empresa') }}
                             </span>
+
+                             <div class="float-right">
+                                <a href="{{ route('empresas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Create New') }}
+                                </a>
+                              </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -28,94 +31,55 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-
-                                        <div class="form-group">
-                                        <h6>Nombre de la empresa</h6>
-                                        <select class="selectpicker" title="Pick One">
-			                            <option data-hidden="true">
-			                            Elija una opción												
-			                            </option>
-			                            </select>
-                             {!! $errors->first('area', '<div class="invalid-feedback">:message</div>') !!}
+                            <table class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>No</th>
                                         
-        
+										<th>Nombre</th>
+										<th>Domicilio</th>
+										<th>Telefono</th>
+										<th>Giro Id</th>
+										<th>Estado Id</th>
+										<th>Ciudad</th>
+										<th>Actividad Id</th>
+										<th>Observaciones</th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     @foreach ($empresas as $empresa)
-                    <a class="btn btn-sm btn-success " href="{{ route('empresas.show',$empresa->id) }}"></i>Consultar</a>
+                                        <tr>
+                                            <td>{{ ++$i }}</td>
+                                            
+											<td>{{ $empresa->nombre }}</td>
+											<td>{{ $empresa->domicilio }}</td>
+											<td>{{ $empresa->telefono }}</td>
+											<td>{{ $empresa->giro_id }}</td>
+											<td>{{ $empresa->estado_id }}</td>
+											<td>{{ $empresa->ciudad }}</td>
+											<td>{{ $empresa->actividad_id }}</td>
+											<td>{{ $empresa->observaciones }}</td>
+
+                                            <td>
+                                                <form action="{{ route('empresas.destroy',$empresa->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
                                     @endforeach
-                            
-        </div>                
+                                </tbody>
+                            </table>
                         </div>
-                    
-
-    <div class="box box-info padding-1">
-    <div class="box-body">
-        
-
-        <h6>Domicilio</h6>
-        <div class="form-group w-50">
-            <input type="text" class="form-control" id="">
-			<br>
-        </div>	
-        <h6>Teléfono</h6>
-        <div class="form-group w-50">
-            <input type="text" class="form-control" id="">
-			<br>
-        </div>	
-        <h6>Giro de la empresa</h6>
-        <div class="form-group w-50">
-            <input type="text" class="form-control" id="">
-			<br>
+                    </div>
+                </div>
+                {!! $empresas->links() !!}
+            </div>
         </div>
-        <h6>Estado</h6>
-			<div class="input-group">
-			<select class="selectpicker" title="Pick One">
-			<option data-hidden="true">
-			Elija una opción												
-			</option>
-		    <option>Puebla</option>
-			<option>Tlaxcala</option>
-			</select>
-		</div>
-        <br>
-        <h6>Giro de la empresa</h6>
-			<div class="input-group">
-			<select class="selectpicker" title="Pick One">
-			<option data-hidden="true">
-			Elija una opción												
-			</option>
-			</select>
-		</div>
-        <br>
-        <h6>Actividad de la empresa</h6>
-			<div class="input-group">
-			<select class="selectpicker" title="Pick One">
-			<option data-hidden="true">
-			Elija una opción												
-			</option>
-			</select>
-		</div>
-        <br>
-        <h6>Población o Ciudad</h6>
-			<div class="input-group">
-			<select class="selectpicker" title="Pick One">
-			<option data-hidden="true">
-			Elija una opción												
-			</option>
-			</select>
-		</div>
-        <br>
-        <h6>Observaciones</h6>
-        <div class="form-group w-50">
-            <input type="text" class="form-control" id="">
-			<br>
-        </div>
-
-       </div>
-       <div class="box-footer mt20">
-       @foreach ($empresas as $empresa)
-       <center><a class="btn btn-sm btn-success " href="{{ route('empresas.show',$empresa->id) }}"></i>Consultar</a></center>
-       @endforeach
-      </div>
-  </div>   
-</div>
+    </div>
 @endsection

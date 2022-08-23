@@ -34,6 +34,41 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.vacantes.create'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.vacantes.edit'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.vacantes.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.niveles.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.niveles.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.niveles.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.niveles.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.carreras.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.carreras.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.carreras.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.carreras.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.generaciones.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.generaciones.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.generaciones.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.generaciones.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.areas.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.areas.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.areas.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.areas.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.giros.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.giros.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.giros.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.giros.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.actividades.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.actividades.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.actividades.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.actividades.destroy'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'admin.areas-vacantes.index'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.areas-vacantes.create'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.areas-vacantes.edit'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.areas-vacantes.destroy'])->syncRoles([$role1]);
     
     }
 

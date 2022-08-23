@@ -10,15 +10,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $nombre
  * @property $domicilio
- * @property $tel
- * @property $giro
- * @property $estado
+ * @property $telefono
+ * @property $giro_id
+ * @property $estado_id
  * @property $ciudad
- * @property $actividad
+ * @property $actividad_id
  * @property $observaciones
  * @property $created_at
  * @property $updated_at
  *
+ * @property Actividade $actividade
+ * @property Estado $estado
+ * @property Giro $giro
  * @property Vacante[] $vacantes
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -29,12 +32,11 @@ class Empresa extends Model
     static $rules = [
 		'nombre' => 'required',
 		'domicilio' => 'required',
-		'tel' => 'required',
-		'giro' => 'required',
-		'estado' => 'required',
+		'telefono' => 'required',
+		'giro_id' => 'required',
+		'estado_id' => 'required',
 		'ciudad' => 'required',
-		'actividad' => 'required',
-		'observaciones' => 'required',
+		'actividad_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -44,9 +46,33 @@ class Empresa extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','domicilio','tel','giro','estado','ciudad','actividad','observaciones'];
+    protected $fillable = ['nombre','domicilio','telefono','giro_id','estado_id','ciudad','actividad_id','observaciones'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function actividade()
+    {
+        return $this->hasOne('App\Models\Actividade', 'id', 'actividad_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function estado()
+    {
+        return $this->hasOne('App\Models\Estado', 'id', 'estado_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function giro()
+    {
+        return $this->hasOne('App\Models\Giro', 'id', 'giro_id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
