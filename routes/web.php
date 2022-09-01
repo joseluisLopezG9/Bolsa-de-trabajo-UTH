@@ -25,6 +25,12 @@ Auth::routes();
 
 Route::resource('/egresados', 'EgresadoController')->names('admin.egresados')->middleware('auth');
 
+Route::resource('/graduates', 'GraduateController')->names('viewer.graduates')->middleware('auth');
+
+Route::resource('/enterprises', 'EnterpriseController')->names('viewer.enterprises')->middleware('auth');
+
+Route::resource('/vacants', 'VacantController')->names('viewer.vacants')->middleware('auth');
+
 Route::resource('/empresas', 'EmpresaController')->names('admin.empresas')->middleware('auth');
 
 Route::resource('/vacantes', 'VacanteController')->names('admin.vacantes')->middleware('auth');

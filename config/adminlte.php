@@ -258,6 +258,11 @@ return [
                     'can' => 'admin.egresados.index'
                 ],
                 [   
+                    'text' => '-- Consultar egresado',
+                    'url' => 'graduates',
+                    'can' => 'viewer.graduates.index'
+                ],
+                [   
                     'text' => '-- Vigentes',
                     'route' => 'admin.egresadosVigentes',
                     'can' => 'admin.egresados.edit'
@@ -311,6 +316,11 @@ return [
                     'can' => 'admin.empresas.index'
                 ],
                 [
+                    'text' => '-- Consultar empresa',
+                    'url' => 'enterprises',
+                    'can' => 'viewer.enterprises.index'
+                ],
+                [
                     'text' => '-- Giros',
                     'url' => 'giros',
                     'can' => 'admin.giros.index'
@@ -336,6 +346,11 @@ return [
                     'text' => '-- Consultar vacante',
                     'url' => 'vacantes',
                     'can' => 'admin.vacantes.index'
+                ],
+                [
+                    'text' => '-- Consultar vacante',
+                    'url' => 'vacants',
+                    'can' => 'viewer.vacants.index'
                 ],
                 [
                     'text' => '-- Áreas de especialización',

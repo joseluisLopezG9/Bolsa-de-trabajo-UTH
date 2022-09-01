@@ -20,23 +20,29 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'home'])->syncRoles([$role1, $role2]);
 
-        Permission::create(['name' => 'admin.egresados.index'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.egresados.index'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.egresados.create'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.egresados.edit'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.egresados.destroy'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.egresados.show'])->syncRoles([$role1]);
 
-        Permission::create(['name' => 'admin.empresas.index'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'viewer.graduates.index'])->syncRoles([$role2]);
+
+        Permission::create(['name' => 'admin.empresas.index'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.empresas.create'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.empresas.edit'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.empresas.destroy'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.empresas.show'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'viewer.enterprises.index'])->syncRoles([$role2]);
  
-        Permission::create(['name' => 'admin.vacantes.index'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.vacantes.index'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.vacantes.create'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.vacantes.edit'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.vacantes.destroy'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.vacantes.show'])->syncRoles([$role1]);
+
+        Permission::create(['name' => 'viewer.vacants.index'])->syncRoles([$role2]);
 
         Permission::create(['name' => 'admin.niveles.index'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.niveles.create'])->syncRoles([$role1]);
