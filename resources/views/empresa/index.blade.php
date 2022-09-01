@@ -77,10 +77,11 @@
 											<td>{{ $empresa->observaciones }}</td>
 
                                             <td>
-                                                <form action="" method="">
-                                                    <a class="btn btn-sm btn-outline-primary " href=""><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-outline-success" href=""><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('admin.empresas.destroy',$empresa->id) }} " method="POST">
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('admin.empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href="{{ route('admin.empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>

@@ -102,12 +102,13 @@
 											<td>{{ $egresado->apellidoMaterno }}</td>
 											<td>{{ $egresado->carrera->nombre }}</td>
 											<td>{{ $egresado->matricula }}</td>
-
+                                             
                                             <td>
-                                                <form action="" method="">
-                                                    <a class="btn btn-sm btn-outline-primary " href=""><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-outline-success" href=""><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('admin.egresados.destroy',$egresado->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('admin.egresados.show',$egresado->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href="{{ route('admin.egresados.edit',$egresado->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>

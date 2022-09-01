@@ -76,9 +76,9 @@
 											<td>{{ $vacante->horario }}</td>
 
                                             <td>
-                                                <form action="" method="">
-                                                    <a class="btn btn-sm btn-outline-primary " href=""><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-outline-success" href=""><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('admin.vacantes.destroy',$vacante->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('admin.vacantes.show',$vacante->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-outline-success" href="{{ route('admin.vacantes.edit',$vacante->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
